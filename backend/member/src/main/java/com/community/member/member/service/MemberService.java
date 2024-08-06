@@ -1,9 +1,11 @@
-package com.community.service;
+package com.community.member.member.service;
 
-import com.community.domain.dto.*;
-import com.community.domain.entity.*;
-import com.community.repository.*;
+import com.community.member.member.domain.dto.MemberDTO;
+import com.community.member.member.domain.dto.MemberInterestsDTO;
+import com.community.member.member.domain.entity.*;
+import com.community.member.member.repository.*;
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,38 +17,27 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Service
 @Slf4j
+@Service
+@RequiredArgsConstructor
 public class MemberService {
+    private final MemberRepository memberRepository;
+    private final MemberRoleRepository memberRoleRepository;
+    private final MemberInterestsRepository memberInterestsRepository;
+    private final PasswordQuestionRepository passwordQuestionRepository;
+    private final IndustryRepository industryRepository;
+    private final PasswordEncoder encoder;
 
-    private MemberRepository memberRepository;
-    private MemberRoleRepository memberRoleRepository;
-    private MemberInterestsRepository memberInterestsRepository;
-    private IndustryRepository industryRepository;
-    private PasswordQuestionRepository passwordQuestionRepository;
-    private PasswordEncoder encoder;
-
-    public MemberService(MemberRepository memberRepository, MemberRoleRepository memberRoleRepository, MemberInterestsRepository memberInterestsRepository, IndustryRepository industryRepository, PasswordQuestionRepository passwordQuestionRepository, PasswordEncoder encoder) {
-        this.memberRepository = memberRepository;
-        this.memberRoleRepository = memberRoleRepository;
-        this.memberInterestsRepository = memberInterestsRepository;
-        this.industryRepository = industryRepository;
-        this.passwordQuestionRepository = passwordQuestionRepository;
-        this.encoder = encoder;
-    }
-
-    //회원가입
     @Transactional
-    public MemberResponse save(AddMemberRequest request) {
+    public MemberDTO.MemberResponse signup(MemberDTO.AddMemberRequest request) {
         //UUID 자동 생성
         String createUUID = UUID.randomUUID().toString();
         //기본 USER 권한 추가
-        MemberRole USER = memberRoleRepository.findAllByMemberRoleName("USER").orElseThrow();
+        MemberRole USER = memberRoleRepository.findByRoleName("USER").orElseThrow();
         PasswordQuestion question = passwordQuestionRepository.findById(request.getPasswordQuestionId()).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 질문 입니다."));
 
         //닉네임 유효성 검사
         if (memberRepository.existsByNickname(request.getNickname())) {
-
             throw new IllegalArgumentException("이미 등록된 닉네임 입니다.");
         }
         //이메일 유효성 검사
@@ -57,7 +48,6 @@ public class MemberService {
         if (validatePassword(request.getPassword())) {
             throw new IllegalArgumentException("비밀번호가 올바르지 않습니다.");
         }
-
         //앞자리 한 글자로 변환
         if(request.getGender().length() > 1) {
             request.setGender(request.getGender().substring(0,1));
@@ -77,21 +67,11 @@ public class MemberService {
                 .memberRole(USER)
                 .build());
 
-        //관심 업종 저장
-        for(String industryId : request.getIndustries()) {
-            Industry industry = industryRepository.findById(industryId).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 업종입니다."));
-            MemberInterests interest = new MemberInterests(
-                    UUID.randomUUID().toString(),
-                    industry,
-                    member);
-            memberInterestsRepository.save(interest);
-        }
-
-        return new MemberResponse(member);
+        return addIndustryList(request.getIndustries(), member);
     }
 
     @Transactional
-    public MemberResponse update(String email, ModifyInfoRequest request) {
+    public MemberDTO.MemberResponse update(String email, MemberDTO.ModifyInfoRequest request) {
 
         Member member = memberRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("잘못된 사용자 입니다."));
         PasswordQuestion question = passwordQuestionRepository.findById(request.getPasswordQuestionId()).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 질문 입니다."));
@@ -115,25 +95,14 @@ public class MemberService {
 
 
         //관심 업종 저장
-        List<MemberInterests> list = memberInterestsRepository.findAllByMember(member).orElse(new ArrayList<>());
-        for(MemberInterests interests : list){
-            memberInterestsRepository.delete(interests);
-        }
+        List<MemberInterests> list = memberInterestsRepository.findAllByMember(member);
+        memberInterestsRepository.deleteAll(list);
 
-        for(String industryId : request.getIndustriesId()){
-            if(industryId.equals("")) continue;
-            Industry industry = industryRepository.findById(industryId).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 업종입니다."));
-            MemberInterests interest = new MemberInterests(
-                    UUID.randomUUID().toString(),
-                    industry,
-                    member);
-            memberInterestsRepository.save(interest);
-        }
-        return new MemberResponse(member);
+        return addIndustryList(request.getIndustriesId(), member);
     }
 
     @Transactional
-    public boolean withdrawal(String email, WithdrawalRequest request) {
+    public boolean withdrawal(String email, MemberDTO.WithdrawalRequest request) {
         Member member = memberRepository.findByEmail(request.getEmail()).orElseThrow(() -> new IllegalArgumentException("잘못된 입력 입니다."));
 
         if (member.getEmail().equals(email)) throw new RuntimeException("삭제는 본인만 가능 합니다.");
@@ -146,18 +115,18 @@ public class MemberService {
         return false;
     }
 
-    public UserInfoResponse userInfo(String email) {
+    public MemberDTO.UserInfoResponse userInfo(String email) {
         if (email == null || email.isEmpty()) throw new RuntimeException("비회원 입니다.");
         Member member = memberRepository.findByEmail(email).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 사용자 입니다."));
-        List<InterestResponse> list = memberInterestsRepository.findAllByMember(member).orElseThrow(() -> new EntityNotFoundException("잘못된 접근입니다.")).stream().map(InterestResponse::new).toList();
-        return new UserInfoResponse(member, list);
+        List<MemberInterestsDTO.InterestResponse> list = memberInterestsRepository.findAllByMember(member).stream().map(MemberInterestsDTO.InterestResponse::new).toList();
+        return new MemberDTO.UserInfoResponse(member, list);
     }
 
-    public FindPasswordResponse findPassword(FindPasswordRequest request) {
+    public MemberDTO.FindPasswordResponse findPassword(MemberDTO.FindPasswordRequest request) {
         if (request.getEmail() == null || request.getPasswordQuestionId() == null || request.getFindPasswordAnswer() == null) {
             throw new IllegalArgumentException("데이터가 비어 있습니다.");
         }
-        if (request.getEmail().isEmpty() || request.getPasswordQuestionId().isEmpty() || request.getFindPasswordAnswer().isEmpty()) {
+        if (request.getEmail().isEmpty() || request.getFindPasswordAnswer().isEmpty()) {
             throw new IllegalArgumentException("데이터가 비어 있습니다.");
         }
         Member member = memberRepository.findByEmail(request.getEmail()).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 사용자 입니다."));
@@ -167,24 +136,39 @@ public class MemberService {
         if (!member.getFindPasswordAnswer().equals(request.getFindPasswordAnswer())) {
             throw new IllegalArgumentException("가입정보와 입력하신 데이터가 상이합니다.");
         }
-        return new FindPasswordResponse(request);
+        return new MemberDTO.FindPasswordResponse(request);
     }
 
     @Transactional
-    public MemberResponse changePassword(ChangePasswordRequest request) {
+    public MemberDTO.MemberResponse changePassword(MemberDTO.ChangePasswordRequest request) {
         if (request.getEmail() == null || request.getPassword() == null) throw new IllegalArgumentException("데이터가 비어 있습니다.");
         if (request.getEmail().isEmpty() || request.getPassword().isEmpty()) throw new IllegalArgumentException("데이터가 비어 있습니다.");
         if (validatePassword(request.getPassword())) throw new IllegalArgumentException("비밀번호 유형이 올바르지 않습니다.");
         Member member = memberRepository.findByEmail(request.getEmail()).orElseThrow(() -> new EntityNotFoundException("존재하지 않는 사용자 입니다."));
         member.setPassword(encoder.encode(request.getPassword()));
-        return new MemberResponse(member);
+        return new MemberDTO.MemberResponse(member);
     }
 
     //비밀번호 유효성 검사 메서드
-    public boolean validatePassword(String password) {
+    private boolean validatePassword(String password) {
         String regex = "^(?=.\\d)(?=.[A-Z])(?=.[a-z])(?=.[^\\w\\d\\s:])([^\\s]){8,16}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
+    }
+
+    //산업 리스트 조회 및 추가
+    private MemberDTO.MemberResponse addIndustryList(List<String> industriesId, Member member) {
+        List<MemberInterests> interestsList = new ArrayList<>();
+        List<Industry> industryList = industryRepository.findAllById(industriesId);
+        for(Industry industry : industryList) {
+            MemberInterests interest = MemberInterests.builder()
+                    .industry(industry)
+                    .member(member)
+                    .build();
+            interestsList.add(interest);
+        }
+        memberInterestsRepository.saveAll(interestsList);
+        return new MemberDTO.MemberResponse(member);
     }
 }

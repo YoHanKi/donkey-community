@@ -1,9 +1,8 @@
-package com.community.service;
+package com.community.member.member.service;
 
-import com.community.domain.dto.AddIndustryRequest;
-import com.community.domain.entity.Industry;
-import com.community.repository.IndustryRepository;
-import lombok.AllArgsConstructor;
+import com.community.member.member.domain.dto.IndustryDTO;
+import com.community.member.member.domain.entity.Industry;
+import com.community.member.member.repository.IndustryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,7 @@ public class IndustryService {
         return industryRepository.findAll();
     }
 
-    public Industry saveIndustry(AddIndustryRequest request) {
+    public Industry saveIndustry(IndustryDTO.AddIndustryRequest request) {
         final int MAX_NAME_LENGTH = 20;
         final int MAX_NAME_COMMENT = 255;
 

@@ -4,31 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/dependencies-accessors/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/IndustryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/MemberDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/MemberInterestsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/entity/MemberInterests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/entity/MemberRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/entity/PasswordQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/enums/QuestionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/repository/MemberInterestsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/repository/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/repository/MemberRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/repository/PasswordQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/service/IndustryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/service/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/service/PasswordQuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/dto/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/service/MemberDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.6/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/entity/Industry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/repository/IndustryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config-server/src/main/java/com/community/config/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/java/com/community/config/ConfigServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewCategories.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewScore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Reviews.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewCategoriesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewScoreRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewsRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Industry.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Industry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/IndustryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/IndustryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/PasswordQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/PasswordQuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/MemberApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/MemberApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +110,15 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -127,47 +142,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build config-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build eureka-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build gateway-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.config-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.donkey-community [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.donkey-service [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.eureka [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.eureka-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.gateway-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ESTsoft boot/donkey-community&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build config-server.executor": "Run",
+    "Gradle.Build eureka-server.executor": "Run",
+    "Gradle.Build gateway-server.executor": "Run",
+    "Gradle.config-server [build].executor": "Run",
+    "Gradle.donkey-community [clean].executor": "Run",
+    "Gradle.donkey-service [build].executor": "Run",
+    "Gradle.eureka [build].executor": "Run",
+    "Gradle.eureka-server [build].executor": "Run",
+    "Gradle.gateway-server [build].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GatewayServerApplication.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ESTsoft boot/grinder",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31839082",
+    "run.configurations.included.in.services": "true",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ESTsoft boot\donkey-community" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\donkey-service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.community.member.member.repository" />
+      <recent name="com.community.member.member.domain.entity" />
+      <recent name="com.community.member.security.dto" />
+      <recent name="com.community.member.security.config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -353,6 +375,7 @@
       <workItem from="1722784104825" duration="4557000" />
       <workItem from="1722818295417" duration="16234000" />
       <workItem from="1722911543248" duration="1953000" />
+      <workItem from="1722926289949" duration="14653000" />
     </task>
     <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
       <option name="closed" value="true" />
@@ -362,7 +385,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722768249543</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가">
+      <option name="closed" value="true" />
+      <created>1722926550002</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722926550002</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,6 +412,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가" />
+    <MESSAGE value="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가" />
   </component>
 </project>

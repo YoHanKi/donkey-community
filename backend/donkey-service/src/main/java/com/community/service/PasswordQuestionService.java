@@ -5,6 +5,7 @@ import com.community.domain.dto.PasswordQuestionResponse;
 import com.community.domain.entity.PasswordQuestion;
 import com.community.repository.PasswordQuestionRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,11 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 @Slf4j
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PasswordQuestionService {
-    private PasswordQuestionRepository passwordQuestionRepository;
+    private final PasswordQuestionRepository passwordQuestionRepository;
 
     @Transactional
     public PasswordQuestion savePasswordQuestion(AddPasswordQuestionRequest request){
@@ -41,9 +44,7 @@ public class PasswordQuestionService {
 	public List<PasswordQuestionResponse> showAllPasswordQuestion() {
         List<PasswordQuestion> passwordQuestionList = passwordQuestionRepository.findAll();
 
-        return passwordQuestionList.stream().map(question -> {
-				return new PasswordQuestionResponse(question.getPasswordQuestionId(), question.getQuestion());
-			})
-            .toList();
+        return passwordQuestionList.stream().map(question -> new PasswordQuestionResponse(question.getPasswordQuestionId(), question.getQuestion())
+			).toList();
 	}
 }
