@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/donkey-community.iml" filepath="$PROJECT_DIR$/donkey-community.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/donkey-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/donkey-server.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/donkey-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/donkey-server.test.iml" />
     </modules>
   </component>
 </project>

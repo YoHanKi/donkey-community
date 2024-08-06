@@ -19,6 +19,30 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/eureka-server" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/eureka-server" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/gateway-server" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/gateway-server" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/member" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/backend/member" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>

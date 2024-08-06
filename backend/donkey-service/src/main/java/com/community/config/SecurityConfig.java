@@ -72,7 +72,6 @@ public class SecurityConfig {
         // 필터 적용 위치 조정
         http.addFilterBefore(apiLoginFilter, UsernamePasswordAuthenticationFilter.class);
 
-
         // LoginSuccessHandler -> 로그인 성공 시
         APILoginSuccessHandler successHandler = new APILoginSuccessHandler(jwtUtil);
         // LoginFilter --> 로그인 성공 시 successHandler로 이동
@@ -136,7 +135,6 @@ public class SecurityConfig {
     public CorsConfigurationSource configurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("http://localhost:3000");
-        configuration.addAllowedOrigin("http://172.31.5.82:3000");
         configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));

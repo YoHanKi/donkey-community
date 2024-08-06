@@ -4,406 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/dependencies-accessors/gc.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/dependencies-accessors/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/fileChanges/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/fileChanges/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.6/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.gradle/8.6/dependencies-accessors/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/community.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/modules/community.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/community.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/modules/community.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/CommunityApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/config/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/BoardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/CommentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/ExControllerAdvice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/IndustryController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/controller/MemberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/AddCommentRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/AddIndustryRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/AddMemberRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/BoardResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/CommentCommonResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/CommentResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/CreateBoardRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/DeleteCommentRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/ErrorResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/IndustryResponse$IndustryResponseBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/IndustryResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/MemberResponse$MemberResponseBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/MemberResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/ModifyCommentRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/ModifyInfoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/UpdateBoardApproveRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/dto/WithdrawalRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/BaseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Board$BoardBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Comment$CommentBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Companies.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Document$DocumentBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Document.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Industry$IndustryBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Industry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/LikeIt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Member$MemberBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Member.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/MemberInterests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/MemberRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/PasswordQuestion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Report$ReportBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Report.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/ReviewCategories.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/ReviewScore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Reviews$ReviewsBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Reviews.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/domain/entity/Viewership.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/BoardRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/CommentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/CompaniesRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/DocumentRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/IndustryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/LikeItRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/MemberInterestsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/MemberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/MemberRoleRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/PasswordQuestionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/ReportRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/ReviewCategoriesRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/ReviewScoreRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/ReviewsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/repository/ViewershipRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/MemberDetailsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/exception/AccessTokenException$TOKEN_ERROR.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/exception/AccessTokenException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/exception/RefreshTokenException$ErrorCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/exception/RefreshTokenException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/filter/APILoginFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/filter/RefreshTokenFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/filter/TokenCheckFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/security/handler/APILoginSuccessHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/service/BoardService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/service/CommentService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/service/CompaniesService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/service/IndustryService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/service/MemberService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/community/util/JWTUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/CommunityApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/controller/AdminControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/controller/BoardControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/controller/CommentControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/controller/IndustryControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/controller/MemberControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/BoardRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/CommentRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/CompaniesRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/DocumentRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/IndustryRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/LikeItRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/MemberInterestsRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/MemberRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/MemberRoleRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/PasswordQuestionRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/ReportRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/ReviewCategoriesRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/ReviewScoreRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/ReviewsRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/repository/ViewershipRepositoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/service/CommentServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/community/util/JWTUtilTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/community-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/community-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.community.controller.AdminControllerTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.community.controller.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resolvedMainClassName" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/db/migration/init.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.community.controller.AdminControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/AdminControllerTest.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/.eslintrc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/.eslintrc.cjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/public/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/vite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/NanumSquareNeoTTF-aLt.woff" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/NanumSquareNeoTTF-aLt.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/NanumSquareNeoTTF-bRg.woff" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/NanumSquareNeoTTF-bRg.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/NanumSquareNeoTTF-cBd.woff" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/NanumSquareNeoTTF-cBd.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/NanumSquareNeoTTF-dEb.woff" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/NanumSquareNeoTTF-dEb.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/NanumSquareNeoTTF-eHv.woff" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/NanumSquareNeoTTF-eHv.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/image/emptyBoardNotify.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/image/emptyBoardNotify.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/image/mainCharacter.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/image/mainCharacter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/assets/image/navImage.png" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/assets/image/navImage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Board/BoardAccept.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Board/BoardAccept.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Comment/AnonymousInputSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Comment/AnonymousInputSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Comment/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Comment/Comment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Document/Document.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Document/Document.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/BellIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/BellIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/ComLogo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/ComLogo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/CommentCircleIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/CommentCircleIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/Company.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/Company.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/CompleteIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/CompleteIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/DeleteIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/DeleteIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/DonkeyLogo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/DonkeyLogo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/FileEditIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/FileEditIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/HeartIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/HeartIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/HomeIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/HomeIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/Logout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/Logout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/MessageCircleIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/MessageCircleIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/MoreVerticalIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/MoreVerticalIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/PlusIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/PlusIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/ShareIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/ShareIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Icon/UserIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Icon/UserIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Industry/IndustryArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Industry/IndustryArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Layout/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Layout/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Layout/LabelSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Layout/LabelSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Layout/LogoHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Layout/LogoHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Menu/AdminMenus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Menu/AdminMenus.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Menu/BoardMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Menu/BoardMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Menu/BoardMenus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Menu/BoardMenus.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Menu/Menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Menu/Menus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Menu/Menus.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/Password/PasswordQuestionArticle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/Password/PasswordQuestionArticle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/alert-dialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/alert-dialog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/avatar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/avatar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/checkbox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/command.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/command.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/dialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/dialog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/label.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/label.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/menubar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/menubar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/navigation-menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/navigation-menu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/phone-input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/phone-input.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/popover.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/popover.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/select.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/select.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/textarea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/textarea.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/toast.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/toast.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/toaster.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/toaster.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/components/ui/use-toast.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/components/ui/use-toast.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Board/BoardCreate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Board/BoardCreate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Document/DocumentWrite.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Document/DocumentWrite.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Password/EditPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Password/EditPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Password/FindPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Password/FindPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Signup/Signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Signup/Signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/Signup/SignupComplete.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/Signup/SignupComplete.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/User/EditInformation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/User/EditInformation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/admin/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/admin/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/admin/AdminBoard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/admin/AdminBoard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/admin/AdminIndustry.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/admin/AdminIndustry.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/routes/admin/AdminPasswordQuestion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/routes/admin/AdminPasswordQuestion.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/Cookie.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/Cookie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/DateFormatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/DateFormatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/Parameter.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/Parameter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/RouteHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/RouteHelper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/getComponents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/getComponents.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/src/utils/patternMatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/patternMatcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/ormi-community/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/CommunityApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/CommunityApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/ExControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/ExControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/IndustryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/LikeItController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/LikeItController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/PasswordQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/PasswordQuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/ReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/ViewershipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/ViewershipController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/WebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/WebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/AddCommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/AddCommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/AddDocumentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/AddDocumentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/AddIndustryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/AddIndustryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/AddMemberRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/AddMemberRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/AddPasswordQuestionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/AddPasswordQuestionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/BoardResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/BoardResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ChangePasswordRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ChangePasswordRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/CommentCommonResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/CommentCommonResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/CompanyDataResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/CompanyDataResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/CreateBoardRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/CreateBoardRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/DeleteCommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/DeleteCommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/DocumentWriteResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/DocumentWriteResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ErrorResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ErrorResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/FindCommentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/FindCommentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/FindDocumentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/FindDocumentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/FindPasswordRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/FindPasswordRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/FindPasswordResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/FindPasswordResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/IndustryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/IndustryResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/InterestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/InterestResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/LikeItResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/LikeItResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/MemberResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/MemberResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ModifyCommentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ModifyCommentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ModifyDocumentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ModifyDocumentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ModifyInfoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ModifyInfoRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/PasswordQuestionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/PasswordQuestionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ReportRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ReportRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ReportResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ReportResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/SearchDocumentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/SearchDocumentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/SuccessResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/SuccessResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/UpdateBoardApproveRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/UpdateBoardApproveRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/UserInfoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/UserInfoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/ViewershipResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/ViewershipResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/dto/WithdrawalRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/dto/WithdrawalRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Companies.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Companies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Industry.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Industry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/LikeIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/LikeIt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/MemberInterests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/MemberInterests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/MemberRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/MemberRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/PasswordQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/PasswordQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/ReviewCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/ReviewScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Reviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Reviews.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/domain/entity/Viewership.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Viewership.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/BoardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/CommentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/CompaniesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/CompaniesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/DocumentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/IndustryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/IndustryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/LikeItRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/LikeItRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/MemberInterestsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/MemberInterestsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/MemberRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/MemberRoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/PasswordQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/PasswordQuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/ReviewCategoriesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewCategoriesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/ReviewScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewScoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/ReviewsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/repository/ViewershipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ViewershipRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/MemberDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/MemberDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/exception/AccessTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/AccessTokenException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/exception/RefreshTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/RefreshTokenException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/filter/APILoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/APILoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/filter/RefreshTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/RefreshTokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/filter/TokenCheckFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/TokenCheckFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/handler/APILoginFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginFailureHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/security/handler/APILoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/CompaniesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/CompaniesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/DocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/IndustryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/IndustryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/LikeItService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/LikeItService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/PasswordQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/PasswordQuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/ReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/ViewershipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/ViewershipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/util/CompanyDataAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/util/CompanyDataAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/util/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/util/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/db/migration/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/NanumSquareNeoTTF-aLt-DcNjnIRJ.woff" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/NanumSquareNeoTTF-aLt-DcNjnIRJ.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/NanumSquareNeoTTF-bRg-DMXr-9sh.woff" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/NanumSquareNeoTTF-bRg-DMXr-9sh.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/NanumSquareNeoTTF-cBd-nZ747DfK.woff" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/NanumSquareNeoTTF-cBd-nZ747DfK.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/NanumSquareNeoTTF-dEb-4AGvM9I3.woff" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/NanumSquareNeoTTF-dEb-4AGvM9I3.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/NanumSquareNeoTTF-eHv-BocBc3yK.woff" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/NanumSquareNeoTTF-eHv-BocBc3yK.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/emptyBoardNotify-BV0dgGwu.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/emptyBoardNotify-BV0dgGwu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/index-CEHFmmSi.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/index-CEHFmmSi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/index-DqEB3lFv.css" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/index-DqEB3lFv.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/mainCharacter-B_dls9lF.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/mainCharacter-B_dls9lF.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/navImage-DVWhlBGX.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/assets/navImage-DVWhlBGX.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/public/vite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/CommunityApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/test/java/com/community/CommunityApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/AdminControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/BoardControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/CommentControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/CompanyControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/DocumentControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/IndustryControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/LikeItControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/MemberControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/PasswordQuestionControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/ReportControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/controller/ViewershipControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/BoardRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/CommentRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/CompaniesRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/DocumentRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/IndustryRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/LikeItRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/MemberInterestsRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/MemberRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/MemberRoleRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/PasswordQuestionRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/ReportRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/ReviewCategoriesRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/ReviewScoreRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/ReviewsRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/repository/ViewershipRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/service/CommentServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/community/util/JWTUtilTest.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/donkey-service/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.6/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config-server/src/main/java/com/community/config/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/src/main/java/com/community/config/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewCategories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/ReviewScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/domain/entity/Reviews.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewCategoriesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewScoreRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/repository/ReviewsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -420,6 +45,18 @@
     <projectState path="$PROJECT_DIR$/backend/donkey-service">
       <ProjectState />
     </projectState>
+    <projectState path="$PROJECT_DIR$/backend/eureka">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/eureka-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/gateway-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/member">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -430,21 +67,33 @@
         <task path="$PROJECT_DIR$/backend/donkey-service">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/backend/eureka">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/eureka-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/config-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/gateway-server">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="donkey-server" type="f1a62948:ProjectNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="donkey-server" type="f1a62948:ProjectNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="donkey-server" type="f1a62948:ProjectNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -463,59 +112,86 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2kBHNKOzf13hBkuYZx6AHDWh9j5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.donkey-community [clean].executor": "Run",
-    "Gradle.donkey-service [build].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ESTsoft boot/donkey-community",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31839082",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build config-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build eureka-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build gateway-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.config-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.donkey-community [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.donkey-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.eureka [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.eureka-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gateway-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ESTsoft boot/donkey-community&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ESTsoft boot\donkey-community" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\donkey-service" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.donkey-service [build]">
-    <configuration name="donkey-community [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.gateway-server [build]">
+    <configuration name="config-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/config-server" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -526,10 +202,54 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="donkey-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="eureka [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/donkey-service" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/eureka" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="eureka-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/eureka-server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="gateway-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/gateway-server" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -559,10 +279,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommunityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="donkey-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.CommunityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="config.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.config.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.community.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
+      <module name="eureka.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.eureka.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
+      <module name="gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.gateway.GatewayServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="member.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.member.MemberApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.gateway-server [build]" />
+      <item itemvalue="Gradle.config-server [build]" />
+      <item itemvalue="Gradle.eureka [build]" />
+      <item itemvalue="Gradle.eureka-server [build]" />
+      <item itemvalue="Spring Boot.CommunityApplication" />
+      <item itemvalue="Spring Boot.MemberApplication" />
+      <item itemvalue="Spring Boot.GatewayServerApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.donkey-service [build]" />
-        <item itemvalue="Gradle.donkey-community [clean]" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="Gradle.gateway-server [build]" />
+        <item itemvalue="Gradle.config-server [build]" />
+        <item itemvalue="Gradle.eureka-server [build]" />
+        <item itemvalue="Gradle.eureka [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -574,11 +349,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722750008536</updated>
-      <workItem from="1722750010383" duration="7470000" />
+      <workItem from="1722750010383" duration="7722000" />
+      <workItem from="1722784104825" duration="4557000" />
+      <workItem from="1722818295417" duration="16234000" />
+      <workItem from="1722911543248" duration="1953000" />
     </task>
+    <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
+      <option name="closed" value="true" />
+      <created>1722768249543</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722768249543</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가" />
   </component>
 </project>
