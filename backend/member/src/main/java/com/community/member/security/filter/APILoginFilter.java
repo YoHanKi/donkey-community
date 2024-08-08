@@ -1,4 +1,4 @@
-package com.community.security.filter;
+package com.community.member.security.filter;
 
 import com.google.gson.Gson;
 import jakarta.servlet.ServletException;

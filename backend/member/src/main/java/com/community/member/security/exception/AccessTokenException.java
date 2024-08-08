@@ -1,4 +1,4 @@
-package com.community.security.exception;
+package com.community.member.security.exception;
 
 import com.google.gson.Gson;
 import jakarta.servlet.http.HttpServletResponse;

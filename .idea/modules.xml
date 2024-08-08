@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/donkey-community.iml" filepath="$PROJECT_DIR$/donkey-community.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/donkey-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/donkey-server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/donkey-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/donkey-server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gateway.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/member.main.iml" filepath="$PROJECT_DIR$/.idea/modules/member.main.iml" />
     </modules>
   </component>
 </project>

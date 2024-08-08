@@ -9,9 +9,5 @@ public class IndustryDTO {
     public static class AddIndustryRequest {
         private String industryName;
         private String industryComment;
-
-        public AddIndustryRequest(String industryName){
-            this.industryName = industryName;
-        }
     }
 }

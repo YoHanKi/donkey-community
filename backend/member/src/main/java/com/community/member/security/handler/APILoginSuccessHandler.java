@@ -1,8 +1,10 @@
-package com.community.security.handler;
+package com.community.member.security.handler;
 
-import com.community.util.JWTUtil;
+import com.community.member.global.util.JWTUtil;
+import com.community.member.global.util.RedisUtil;
+import com.community.member.member.domain.entity.Member;
+import com.community.member.member.repository.MemberRepository;
 import com.google.gson.Gson;
-import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,20 +18,15 @@ import java.io.IOException;
 import java.util.Map;
 
 @Slf4j
+@RequiredArgsConstructor
 public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
-
+    private final MemberRepository memberRepository;
     private final JWTUtil jwtUtil;
-
-    public APILoginSuccessHandler(JWTUtil jwtUtil) {
-        this.jwtUtil = jwtUtil;
-    }
+    private final RedisUtil redisUtil;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-
-        log.info(authentication.toString());
-        log.info(authentication.getName());
 
         Map<String, Object> claim = Map.of("email", authentication.getName());
         //Access Token 유효기간 1시간
@@ -40,6 +37,10 @@ public class APILoginSuccessHandler implements AuthenticationSuccessHandler {
         Gson gson = new Gson();
 
         Map<String, String> keyMap = Map.of("accessToken", accessToken, "refreshToken", refreshToken);
+
+        //레디스에 저장
+        Member member = memberRepository.findByEmail(authentication.getName()).orElse(new Member());
+        redisUtil.set(member.getEmail(), member.getMemberRole().getRoleName(), 60);
 
         String jsonStr = gson.toJson(keyMap);
 

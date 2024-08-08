@@ -21,9 +21,6 @@ public class JWTUtil {
     //문자열 생성 기능
     public String generateToken(Map<String, Object> valueMap, int hours){
 
-
-        log.info("generateToken..." + key);
-
         //헤더 부분
         Map<String, Object> headers = new HashMap<>();
         headers.put("typ", "JWT");
@@ -58,12 +55,6 @@ public class JWTUtil {
                 .build()
                 .parseClaimsJws(token) // 파싱 및 검증, 실패 시 에러
                 .getBody();
-
-        // 9 버전
-//        claim = Jwts.parser()
-//                .setSigningKey(key.getBytes())  //키 지정
-//                .parseClaimsJws(token)          //파싱 및 검증, 실패 시 에러
-//                .getBody();
 
         return claim;
     }
