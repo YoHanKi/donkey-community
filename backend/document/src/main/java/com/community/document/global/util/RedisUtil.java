@@ -1,5 +1,6 @@
 package com.community.document.global.util;
 
+import com.community.document.global.dto.RedisObject;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,13 +15,14 @@ public class RedisUtil {
 
     private final RedisTemplate<String, Object> documentRedisTemplate;
 
-    public void setDocumentData(String key, Object value, int minutes) {
+    public void setDocumentData(String key, Object value) {
         documentRedisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(value.getClass()));
-        documentRedisTemplate.opsForValue().set(key, value, minutes, TimeUnit.MINUTES);
+        documentRedisTemplate.opsForValue().set(key, value);
     }
 
-    public Object getDocumentData(String key) {
-        return documentRedisTemplate.opsForValue().get(key);
+    public RedisObject getDocumentData(String key) {
+        documentRedisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(RedisObject.class));
+        return (RedisObject) documentRedisTemplate.opsForValue().get(key);
     }
 
     public boolean deleteDocumentData(String key) {

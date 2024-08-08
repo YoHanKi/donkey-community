@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class RedisUtil {
 
-    @Resource(name = "redisTemplate")
     private final RedisTemplate<String, Object> redisTemplate;
     @Resource(name = "documentRedisTemplate")
     private final RedisTemplate<String, Object> documentRedisTemplate;
@@ -35,9 +34,9 @@ public class RedisUtil {
         return Boolean.TRUE.equals(redisTemplate.hasKey(key));
     }
 
-    public void setDocumentData(String key, Object value, int minutes) {
+    public void setDocumentData(String key, Object value) {
         documentRedisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(value.getClass()));
-        documentRedisTemplate.opsForValue().set(key, value, minutes, TimeUnit.MINUTES);
+        documentRedisTemplate.opsForValue().set(key, value);
     }
 
     public Object getDocumentData(String key) {

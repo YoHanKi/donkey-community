@@ -1,13 +1,11 @@
-package com.community.service;
+package com.community.document.document.service;
 
-import org.springframework.stereotype.Service;
-
-import com.community.domain.entity.Viewership;
-import com.community.repository.ViewershipRepository;
-
+import com.community.document.document.domain.entity.Viewership;
+import com.community.document.document.repository.ViewershipRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j

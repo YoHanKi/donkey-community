@@ -1,14 +1,11 @@
-package com.community.service;
+package com.community.document.document.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
-import com.community.domain.entity.LikeIt;
-import com.community.repository.LikeItRepository;
-
+import com.community.document.document.domain.entity.LikeIt;
+import com.community.document.document.repository.LikeItRepository;
 import jakarta.transaction.Transactional;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j

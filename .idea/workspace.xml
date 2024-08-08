@@ -4,51 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : member 서비스 필터, gateway 필터 추가&#10;&#10;member JWT 관련 필터를 추가하였습니다. 로그인 시 작동하며, JWT를 발급하고 Redis에 이메일 및 권한을 추가합니다.&#10;gateway 글로벌 필터에서 레디스를 확인하여 헤더에 담아 전달합니다.">
-      <change afterPath="$PROJECT_DIR$/backend/config-server/Dockerfile" afterDir="false" />
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다.">
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/document-dev.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Companies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Document.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Industry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/LikeIt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Viewership.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/controller/ExControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/dto/ErrorResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/dto/SuccessResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/util/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/eureka-server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gateway-server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/controller/ExControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/dto/SuccessResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/IndustryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/MemberController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/PasswordQuestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/WebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/admin/controller/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/admin/domain/dto/ReportDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/admin/domain/entity/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/admin/repository/ReportRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/admin/service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/controller/BoardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/controller/DocumentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/controller/LikeItController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/controller/ViewershipController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/dto/BoardDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/dto/CommentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/dto/DocumentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/dto/LikeViewershipDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/domain/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/BoardRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/CompaniesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/DocumentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/IndustryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/LikeItRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/repository/ViewershipRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/service/BoardService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/service/DocumentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/service/LikeItService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/document/service/ViewershipService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/dto/RedisObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/IndustryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/PasswordQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/controller/PasswordQuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/eureka-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/filter/TokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/filter/TokenFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/util/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/document/src/main/java/com/community/document/global/util/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/CompaniesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/CompaniesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/LikeItService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/LikeItService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/ViewershipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/service/ViewershipService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/util/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/util/RedisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/IndustryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/IndustryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/IndustryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/IndustryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/PasswordQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/controller/PasswordQuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/service/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/filter/RefreshTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/filter/RefreshTokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/src/test/java/com/community/member/MemberApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/test/java/com/community/member/MemberApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/ormi-community/src/utils/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/ormi-community/src/utils/API.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +159,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/msa_config" />
+        <entry key="$PROJECT_DIR$" value="feature/08_07_msa_member" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -208,7 +208,7 @@
     "dart.analysis.tool.window.visible": "false",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/ESTsoft boot/donkey-community/backend/gateway-server",
+    "last_opened_file_path": "C:/ESTsoft boot/donkey-community/backend/document/src/main/java/com/community/document/document/repository",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -225,22 +225,22 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ESTsoft boot\donkey-community\backend\document\src\main\java\com\community\document\document\repository" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\gateway-server" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\eureka-server" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\config-server" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\document\src\main\java\com\community\document" />
-      <recent name="C:\ESTsoft boot\donkey-community\backend\document\src\main\java\com\community\document\global" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ESTsoft boot\donkey-community" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\donkey-service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.community.document.admin.repository" />
       <recent name="com.community.document.document.domain.entity" />
       <recent name="com.community.member.security.util" />
       <recent name="com.community.member.member.repository" />
       <recent name="com.community.member.member.domain.entity" />
-      <recent name="com.community.member.security.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -438,7 +438,7 @@
       <workItem from="1722926289949" duration="18057000" />
       <workItem from="1722995461768" duration="13059000" />
       <workItem from="1723037498048" duration="7409000" />
-      <workItem from="1723079140705" duration="14560000" />
+      <workItem from="1723079140705" duration="31499000" />
     </task>
     <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
       <option name="closed" value="true" />
@@ -472,7 +472,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723079419253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다.">
+      <option name="closed" value="true" />
+      <created>1723104615325</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723104615325</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다.">
+      <option name="closed" value="true" />
+      <created>1723104641954</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723104641954</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +510,8 @@
     <MESSAGE value="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가" />
     <MESSAGE value="Feat : Member 서비스 서버 추가&#10;&#10;Member 서비스 엔티티 및 서버 추가" />
     <MESSAGE value="Feat : member 서비스 필터, gateway 필터 추가&#10;&#10;member JWT 관련 필터를 추가하였습니다. 로그인 시 작동하며, JWT를 발급하고 Redis에 이메일 및 권한을 추가합니다.&#10;gateway 글로벌 필터에서 레디스를 확인하여 헤더에 담아 전달합니다." />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat : member 서비스 필터, gateway 필터 추가&#10;&#10;member JWT 관련 필터를 추가하였습니다. 로그인 시 작동하며, JWT를 발급하고 Redis에 이메일 및 권한을 추가합니다.&#10;gateway 글로벌 필터에서 레디스를 확인하여 헤더에 담아 전달합니다." />
+    <MESSAGE value="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다." />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

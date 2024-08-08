@@ -1,5 +1,6 @@
 package com.community.member.member.controller;
 
+import com.community.member.global.dto.ErrorResult;
 import com.community.member.member.domain.dto.IndustryDTO;
 import com.community.member.member.domain.entity.Industry;
 import com.community.member.member.service.IndustryService;
@@ -7,9 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,5 +31,13 @@ public class IndustryController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @PostMapping("/admin/industry")
+    public ResponseEntity<ErrorResult> saveInudstry(@RequestBody IndustryDTO.AddIndustryRequest request){
+        industryService.saveIndustry(request);
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ErrorResult("성공", "정상적으로 추가되었습니다."));
     }
 }

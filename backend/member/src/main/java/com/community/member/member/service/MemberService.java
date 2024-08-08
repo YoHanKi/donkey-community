@@ -1,5 +1,6 @@
 package com.community.member.member.service;
 
+import com.community.member.global.util.RedisUtil;
 import com.community.member.member.domain.dto.MemberDTO;
 import com.community.member.member.domain.dto.MemberInterestsDTO;
 import com.community.member.member.domain.entity.*;
@@ -27,6 +28,7 @@ public class MemberService {
     private final PasswordQuestionRepository passwordQuestionRepository;
     private final IndustryRepository industryRepository;
     private final PasswordEncoder encoder;
+    private final RedisUtil redisUtil;
 
     @Transactional
     public MemberDTO.MemberResponse signup(MemberDTO.AddMemberRequest request) {
@@ -67,6 +69,10 @@ public class MemberService {
                 .memberRole(USER)
                 .build());
 
+        //레디스 6980 포트로 전송
+        redisUtil.setDocumentData(request.getEmail(),
+                MemberDTO.RedisObject.builder().nickname(request.getNickname()).memberRoleName(USER.getRoleName()).build());
+
         return addIndustryList(request.getIndustries(), member);
     }
 
@@ -93,10 +99,13 @@ public class MemberService {
             member.setFindPasswordAnswer(request.getFindPasswordAnswer());
         }
 
-
         //관심 업종 저장
         List<MemberInterests> list = memberInterestsRepository.findAllByMember(member);
         memberInterestsRepository.deleteAll(list);
+
+        //레디스 6980 포트로 전송
+        redisUtil.setDocumentData(email,
+                MemberDTO.RedisObject.builder().nickname(request.getNickname()).memberRoleName("USER").build());
 
         return addIndustryList(request.getIndustriesId(), member);
     }

@@ -10,7 +10,7 @@ axios.interceptors.response.use(
     const { config, response } = res;
 
     //token 재시도 이후, 혹은 별도의 이유로 에러가 나면 reject
-    if(config.url === (URL + "/refreshToken") || response.status !== 401 || config.sent){
+    if(config.url === (URL + "/member/refreshToken") || response.status !== 401 || config.sent){
         return Promise.reject(res);
     }
 
@@ -81,7 +81,7 @@ const donkeyDelete = async (URL, body) => {
  * @returns { {commentId: String, nickname: String, commentCreatorIp: String || null , email: String, commentDate: "YYYY-MM-DD HH:MM:SS.XXX", commentContent: String, likeCount: number}[] } API returns
  */
 export async function fetchDocComments(docId){
-    const DocCommentURL = URL + `/comment/list/${docId}`;
+    const DocCommentURL = URL + `/document/comment/list/${docId}`;
 
     return donkeyGet(DocCommentURL)
     .then((response) => response.data);
@@ -122,7 +122,7 @@ export async function fetchDocument(docId){
  * @returns  { {boardId: UUID, boardName: String, industyrName: String, comName: String}[] }
  */
 export async function fetchBoardList(){
-    const BoardListURL = URL + "/board/true";
+    const BoardListURL = URL + "/document/board/true";
     return donkeyGet(BoardListURL)
     .then(response => response.data);
 }
@@ -132,7 +132,7 @@ export async function fetchBoardList(){
  * @returns  { {boardId: UUID, boardName: String, industyrName: String, comName: String}[] }
  */
 export async function fetchNotApproveBoardList(){
-    const NotApproveBoardListURL = URL + "/board/false";
+    const NotApproveBoardListURL = URL + "/document/board/false";
     return donkeyGet(NotApproveBoardListURL) 
     .then((response) => response.data);
 }
@@ -181,7 +181,7 @@ export async function fetchOwnIp(){
  * @brief 좋아요 갯수 조회 API
  */
 export async function fetchLikeCount(uuid){
-    const likeCountURL = URL + `/likeit/${uuid}`;
+    const likeCountURL = URL + `/document/likeit/${uuid}`;
     return donkeyGet(likeCountURL)
     .then((response) => response.data);
 }
@@ -202,7 +202,7 @@ export async function signup(signupReqParam){
  * @returns 로그인 결과 반환
  */
 export async function login(loginReqParam){
-    const loginURL = URL + "/api/login";
+    const loginURL = URL + "/member/api/login";
     //응답 데이터 : accessToken, refreshToken
     return donkeyPost(loginURL, loginReqParam)
     .then((response) => response.data) 
@@ -242,26 +242,26 @@ export async function removeDocument(docId){
 }
 
 export async function likeIt(uuid){
-    const likeItURL = URL + `/likeit/${uuid}`;
+    const likeItURL = URL + `/document/likeit/${uuid}`;
     return donkeyPut(likeItURL)
     .then((response) => response.data);
 }
 
 export async function writeComment(commentWriteReqParam, docId){
-    const writeCommentURL = URL + `/comment/${docId}`;
+    const writeCommentURL = URL + `/document/comment/${docId}`;
     return donkeyPost(writeCommentURL, commentWriteReqParam)
     .then((response) => response.data);
 }
 
 export async function appendBoard(appendBoardReqParam){
-    const appendBoardURL = URL + "/board";
+    const appendBoardURL = URL + "/document/board";
     return donkeyPost(appendBoardURL, appendBoardReqParam)
     .then((response) => response.data);
 }
 
 export function acceptBoardPublicing(acceptBoardPublicingReqParam){
     //Accept API 호출
-    const acceptBoardPublicingURL = URL + "/admin/board";
+    const acceptBoardPublicingURL = URL + "/document/admin/board";
 
     return donkeyPut(acceptBoardPublicingURL, acceptBoardPublicingReqParam)
     .then((response) => response.data);
@@ -283,7 +283,7 @@ export async function pwdChange(pwdChangeReqParam){
 
 export async function appendIndustry(appendIndustryReqParam){
     // 업종 추가 API
-    const appendIndustryURL = URL + `/admin/industry`;
+    const appendIndustryURL = URL + `/member/admin/industry`;
 
     return donkeyPost(appendIndustryURL, appendIndustryReqParam)
     .then((response) => response.data);
@@ -291,7 +291,7 @@ export async function appendIndustry(appendIndustryReqParam){
 
     // 비밀번호 질문 추가 API
 export async function appendPasswordQuestion(passwordQuestionReqParam){
-    const appendPasswordQuestionURL = URL + "/admin/passwordquestion";
+    const appendPasswordQuestionURL = URL + "/member/admin/passwordquestion";
 
     return donkeyPost(appendPasswordQuestionURL, passwordQuestionReqParam)
     .then((response) => response.data);
@@ -307,7 +307,7 @@ export async function editUserInfo(userEditInfo){
  * 다수의 API가 토큰 재발급을 의존할 경우를 대비한 메모미제이션
  */
 export const getNewAccessToken = mem(async () =>{
-    const newAccessTokenURL = URL + "/refreshToken";
+    const newAccessTokenURL = URL + "/member/refreshToken";
     return donkeyGet(newAccessTokenURL)
     .then(response => response.data)
     .then(json => setAccessToken(json.accessToken));

@@ -107,4 +107,11 @@ public class MemberDTO {
         private Long passwordQuestionId;
         private String passwordQuestion;
     }
+
+    @Data
+    @Builder
+    public static class RedisObject {
+        private String nickname;
+        private String memberRoleName;
+    }
 }
