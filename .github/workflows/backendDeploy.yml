@@ -1,0 +1,62 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Log in to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v1
+      with:
+        region: ${{ secrets.AWS_REGION }}
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    - name: Build and push Docker images
+      run: |
+        services=("config" "eureka" "gateway" "member" "document")
+        for service in "${services[@]}"; do
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$service:0.0.1-SNAPSHOT ./$service
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$service:0.0.1-SNAPSHOT
+        done
+
+    - name: Upload docker-compose.yml to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        aws s3 cp /path/to/docker-compose.yml s3://my-bucket/docker-compose.yml
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download docker-compose.yml from S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        aws s3 cp s3://my-bucket/docker-compose.yml ./docker-compose.yml
+
+    - name: Run Docker Compose on EC2
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        CONFIG_SERVER_PRIVATE_KEY: ${{ secrets.CONFIG_SERVER_PRIVATE_KEY }}
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_KEY_PAIR }} ec2-user@${{ secrets.EC2_PUBLIC_DNS }} << 'EOF'
+        echo "$CONFIG_SERVER_PRIVATE_KEY" > config-server-private-key.pem
+        docker-compose -f /path/to/docker-compose.yml up -d
+        EOF
