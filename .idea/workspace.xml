@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : Member 서비스 서버 추가&#10;&#10;Member 서비스 엔티티 및 서버 추가">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/gateway.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/filter/TokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/global/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/global/dto/ErrorResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/global/exception/AccessTokenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/global/util/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/java/com/community/gateway/global/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/dto/ErrorResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/util/JWTUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/global/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/exception/AccessTokenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/exception/RefreshTokenException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/filter/APILoginFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/filter/RefreshTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/handler/APILoginFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/handler/APILoginSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/AccessTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/AccessTokenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/RefreshTokenException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/exception/RefreshTokenException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/APILoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/filter/APILoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginFailureHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginFailureHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/security/handler/APILoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/util/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/donkey-service/src/main/java/com/community/util/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/gateway-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/IndustryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/member/domain/dto/IndustryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/java/com/community/member/security/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/config-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/donkey-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/eureka">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/eureka-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/gateway-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/backend/member">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/donkey-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/eureka">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/eureka-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/config-server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/backend/gateway-server">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gateway" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Dockerfile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/msa_config" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2kBHNKOzf13hBkuYZx6AHDWh9j5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build config-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build eureka-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build gateway-server.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build member.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.config-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.donkey-community [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.donkey-service [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.eureka [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.eureka-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.gateway-server [build].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MemberApplication.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/ESTsoft boot/donkey-community/backend/gateway-server/src/main/java/com/community/gateway/global&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ESTsoft boot\donkey-community\backend\gateway-server\src\main\java\com\community\gateway\global" />
+      <recent name="C:\ESTsoft boot\donkey-community\backend\member\src\main\java\com\community\member\security" />
+      <recent name="C:\ESTsoft boot\donkey-community\backend\gateway-server\src\main\java\com\community\gateway" />
+      <recent name="C:\ESTsoft boot\donkey-community\backend\member" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ESTsoft boot\donkey-community" />
+      <recent name="C:\ESTsoft boot\donkey-community\backend\donkey-service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.community.member.security.util" />
+      <recent name="com.community.member.member.repository" />
+      <recent name="com.community.member.member.domain.entity" />
+      <recent name="com.community.member.security.dto" />
+      <recent name="com.community.member.security.config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.gateway-server [build]">
+    <configuration name="config-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/config-server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="eureka [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/eureka" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="eureka-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/eureka-server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="gateway-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend/gateway-server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommunityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="donkey-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.CommunityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="config.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.config.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.community.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
+      <module name="eureka.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.eureka.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
+      <module name="gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.gateway.GatewayServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="member.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.member.MemberApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.gateway-server [build]" />
+      <item itemvalue="Gradle.config-server [build]" />
+      <item itemvalue="Gradle.eureka [build]" />
+      <item itemvalue="Gradle.eureka-server [build]" />
+      <item itemvalue="Spring Boot.CommunityApplication" />
+      <item itemvalue="Spring Boot.MemberApplication" />
+      <item itemvalue="Spring Boot.GatewayServerApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+        <item itemvalue="Gradle.gateway-server [build]" />
+        <item itemvalue="Gradle.config-server [build]" />
+        <item itemvalue="Gradle.eureka-server [build]" />
+        <item itemvalue="Gradle.eureka [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="" />
+      <created>1722750008536</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722750008536</updated>
+      <workItem from="1722750010383" duration="7722000" />
+      <workItem from="1722784104825" duration="4557000" />
+      <workItem from="1722818295417" duration="16234000" />
+      <workItem from="1722911543248" duration="1953000" />
+      <workItem from="1722926289949" duration="18057000" />
+      <workItem from="1722995461768" duration="13059000" />
+      <workItem from="1723037498048" duration="7409000" />
+    </task>
+    <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
+      <option name="closed" value="true" />
+      <created>1722768249543</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722768249543</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가">
+      <option name="closed" value="true" />
+      <created>1722926550002</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722926550002</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Feat : Member 서비스 서버 추가&#10;&#10;Member 서비스 엔티티 및 서버 추가">
+      <option name="closed" value="true" />
+      <created>1722954053046</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722954053046</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가" />
+    <MESSAGE value="Feat : Gateway, Eureka 서버 추가&#10;&#10;MSA 환경 구성을 위한 Gateway, Eureka 서버 추가" />
+    <MESSAGE value="Feat : Member 서비스 서버 추가&#10;&#10;Member 서비스 엔티티 및 서버 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat : Member 서비스 서버 추가&#10;&#10;Member 서비스 엔티티 및 서버 추가" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
