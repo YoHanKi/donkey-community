@@ -1,16 +1,14 @@
-package com.community.controller;
+package com.community.member.member.controller;
 
-import com.community.domain.dto.*;
-import com.community.domain.entity.Member;
-import com.community.service.MemberService;
-import jakarta.servlet.http.HttpServletResponse;
+import com.community.member.global.dto.ErrorResult;
+import com.community.member.global.dto.SuccessResult;
+import com.community.member.member.domain.dto.MemberDTO;
+import com.community.member.member.service.MemberService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -28,24 +26,24 @@ public class MemberController {
     }
 
     @PostMapping("/register") //회원가입
-    public ResponseEntity<SuccessResult> signup(@RequestBody AddMemberRequest request) {
-        memberService.save(request);
+    public ResponseEntity<SuccessResult> signup(@RequestBody MemberDTO.AddMemberRequest request) {
+        memberService.signup(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(new SuccessResult("성공", "회원 정보가 성공적으로 저장 되었습니다."));
     }
 
     @PutMapping("/modifyInfo") //회원정보 수정 (프론트 연결 시 AuthenticationPrincipal 확인)
-    public ResponseEntity<SuccessResult> modify(@RequestBody ModifyInfoRequest request) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
-        memberService.update(email, request);
+    public ResponseEntity<SuccessResult> modify(
+            @RequestHeader(value = "u-Email", defaultValue = "") String userEmail,
+            @RequestBody MemberDTO.ModifyInfoRequest request) {
+        memberService.update(userEmail, request);
         return ResponseEntity.ok().body(new SuccessResult("성공", "회원 정보가 성공적으로 수정 되었습니다."));
     }
 
     @PutMapping("/withdrawal")
-    public ResponseEntity<?> withdrawal(@RequestBody WithdrawalRequest request) throws IOException {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
-        boolean result = memberService.withdrawal(email, request);
+    public ResponseEntity<?> withdrawal(
+            @RequestHeader(value = "u-Email", defaultValue = "") String userEmail,
+            @RequestBody MemberDTO.WithdrawalRequest request) throws IOException {
+        boolean result = memberService.withdrawal(userEmail, request);
         if (result) {
             return ResponseEntity.ok().body(new SuccessResult("성공", "정상적으로 탈퇴 되었습니다."));
         }
@@ -54,28 +52,29 @@ public class MemberController {
 
     //유저 정보 조회
     @GetMapping("/userinfo")
-    public ResponseEntity<UserInfoResponse> userInfo() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
-        return ResponseEntity.ok().body(memberService.userInfo(email));
+    public ResponseEntity<MemberDTO.UserInfoResponse> userInfo(
+            @RequestHeader(value = "u-Email", defaultValue = "") String userEmail,
+            @RequestHeader(value = "u-Role", defaultValue = "ANONYMOUS") String userRole
+    ) {
+        return ResponseEntity.ok().body(memberService.userInfo(userEmail));
     }
 
     //유저 정보 조회
     @GetMapping("/userinfo/{email}")
-    public ResponseEntity<UserInfoResponse> userInfo(@PathVariable("email") String email) {
+    public ResponseEntity<MemberDTO.UserInfoResponse> userInfo(@PathVariable("email") String email) {
         if (email == null) throw new IllegalArgumentException("잘못 입력 되었습니다.");
         return ResponseEntity.ok().body(memberService.userInfo(email));
     }
 
     //비밀번호 찾기 질문
     @PostMapping("/findpassword")
-    public ResponseEntity<FindPasswordResponse> findPassword(@RequestBody FindPasswordRequest request) {
+    public ResponseEntity<MemberDTO.FindPasswordResponse> findPassword(@RequestBody MemberDTO.FindPasswordRequest request) {
         return ResponseEntity.ok().body(memberService.findPassword(request));
     }
 
     //비밀번호 변경
     @PostMapping("/changepassword")
-    public ResponseEntity<SuccessResult> changePassword(@RequestBody ChangePasswordRequest request) {
+    public ResponseEntity<SuccessResult> changePassword(@RequestBody MemberDTO.ChangePasswordRequest request) {
         memberService.changePassword(request);
         return ResponseEntity.ok().body(new SuccessResult("성공", "성공적으로 수정되었습니다."));
     }

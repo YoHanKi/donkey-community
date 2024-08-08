@@ -142,7 +142,7 @@ export async function fetchNotApproveBoardList(){
  * @returns { { industryId: String, industryName: String, industryDescription: String }[] }
  */
 export async function fetchIndustryList(){
-    const IndustryListURL = URL + "/industry";
+    const IndustryListURL = URL + "/member/industry";
     return donkeyGet(IndustryListURL) 
     .then((response) => response.data);
 }
@@ -152,7 +152,7 @@ export async function fetchIndustryList(){
  * @returns  { { passwordQuestionId : String, passwordQuestion: String}[] }
  */
 export async function fetchPasswordQuestion(){
-    const PasswordQuestionURL = URL + "/passwordquestion";
+    const PasswordQuestionURL = URL + "/member/passwordquestion";
     return donkeyGet(PasswordQuestionURL)
     .then(async (response) => response.data);
 }

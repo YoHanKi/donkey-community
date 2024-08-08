@@ -1,9 +1,13 @@
-package com.community.member;
+package com.community.document;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MemberApplicationTests {
+class DocumentApplicationTests {
+
+//    @Test
+//    void contextLoads() {
+//    }
 
 }

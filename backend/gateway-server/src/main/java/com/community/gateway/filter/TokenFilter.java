@@ -42,8 +42,8 @@ public class TokenFilter implements GlobalFilter, Ordered {
                 String role = (String) redisUtil.get(email);
 
                 ServerWebExchange mutatedExchange = exchange.mutate()
-                        .request(builder -> builder.header("x-Email", email)
-                                .header("x-Role", role))
+                        .request(builder -> builder.header("u-Email", email)
+                                .header("u-Role", role))
                         .build();
 
                 // 다음 필터로 전송

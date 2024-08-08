@@ -1,15 +1,93 @@
 version: '3.8'
 services:
-  redisserver:
+  redis-member:
     image: redis:latest
     ports:
       - 6379:6379
     networks:
       backend:
         aliases:
-          - "redis"
-
-
+          - "redismember"
+  redis-document:
+    image: redis:latest
+    ports:
+      - 6380:6379
+    networks:
+      backend:
+        aliases:
+          - "redisdocument"
+  configserver:
+    image: donkey/config:0.0.1-SNAPSHOT
+    container_name: configServer
+    ports:
+      - "8071:8071"
+    networks:
+      backend:
+        aliases:
+          - "configserver"
+  eurekaserver:
+    image: donkey/eureka:0.0.1-SNAPSHOT
+    container_name: eurekaServer
+    ports:
+      - "8070:8070"
+    depends_on:
+      configserver:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "eurekaserver"
+  gatewayserver:
+    image: donkey/gateway:0.0.1-SNAPSHOT
+    container_name: gateway
+    ports:
+      - "8072:8072"
+    environment:
+      PROFILE: "default"
+      SERVER_PORT: "8072"
+      CONFIGSERVER_URI: "http://configserver:8071"
+      EUREKASERVER_URI: "http://eurekaserver:8070/eureka/"
+      EUREKASERVER_PORT: "8070"
+      CONFIGSERVER_PORT: "8071"
+    depends_on:
+      configserver:
+        condition: service_started
+      eurekaserver:
+        condition: service_started
+    networks:
+      backend:
+        aliases:
+          - "gateway"
+  memberservice:
+    image: donkey/member:0.0.1-SNAPSHOT
+    container_name: member-service
+    environment:
+      PROFILE: "dev"
+      CONFIGSERVER_URI: "http://configserver:8071"
+      CONFIGSERVER_PORT: "8071"
+      DATABASESERVER_PORT: "5432"
+    depends_on:
+      configserver:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+  documentservice:
+    image: donkey/document:0.0.1-SNAPSHOT
+    container_name: document-service
+    environment:
+      PROFILE: "dev"
+      CONFIGSERVER_URI: "http://configserver:8071"
+      CONFIGSERVER_PORT: "8071"
+      DATABASESERVER_PORT: "5432"
+    depends_on:
+      configserver:
+        condition: service_started
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
 
 networks:
   backend:

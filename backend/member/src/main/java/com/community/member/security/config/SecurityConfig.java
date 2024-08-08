@@ -70,7 +70,7 @@ public class SecurityConfig {
         // failureHandler -> 로그인 실패 시 failureHandler로 이동
         apiLoginFilter.setAuthenticationFailureHandler(failureHandler);
         // refreshToken 호출
-        http.addFilterBefore(new RefreshTokenFilter("/refreshToken", jwtUtil), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new RefreshTokenFilter("/refreshToken", jwtUtil, redisUtil, memberRepository), UsernamePasswordAuthenticationFilter.class);
 
         /**
          * 시큐리티 설정
