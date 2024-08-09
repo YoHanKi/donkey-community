@@ -27,8 +27,8 @@ jobs:
       run: |
         services=("config" "eureka" "gateway" "member" "document")
         for service in "${services[@]}"; do
-          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$service:0.0.1-SNAPSHOT ./$service
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/$service:0.0.1-SNAPSHOT
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/$service:latest ./$service
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/$service:latest
         done
 
     - name: Upload docker-compose.yml to S3
