@@ -3,7 +3,7 @@
 
 
 
-> 취업과 회사에 대해 자유롭게 이야기 할 수 있는 커뮤니티 👉 [[링크]](http://ormi-donkey.com/)
+> 취업과 회사에 대해 자유롭게 이야기 할 수 있는 커뮤니티 
 
 ![img.png](readme/mainImg.png)
 
@@ -20,15 +20,29 @@
 
 
 ### 1. 💾**개발 환경**
+#### 리펙토링 전
 ![img.png](readme/DevelopmentEnvironment.png)
 
+#### MSA 리펙토링 후
+![img.png](readme/refactoring_skill.png)
+
 - Java JDK 21, JavaScript
-- 프론트엔드 : React, HTML, tailwind
-- 백엔드 : Spring Boot
-- 데이터베이스 : PostgreSQL
+- 프론트엔드 : React, HTML, tailwind, Vite
+- 백엔드 : Spring Boot, Spring Security, Spring Cloud
+- 데이터베이스 : PostgreSQL, Redis
 - ORM : JPA
-- 배포환경 : AWS EC2, RDS
+- 배포환경 : AWS EC2, RDS, S3, CodeDeploy, GitHubActions, CloudFront, Docker, ECR
 - 협업도구 : GitHub, Notion, Miro, ERD Cloud, Figma
+
+## 🏭System Structure
+#### 리펙토링 전
+![img.png](readme/SystemStructure.png)
+#### MSA 리펙토링 후
+![img.png](readme/refactoring_structure.png)
+
+## 🔐ERD Structure
+![img.png](readme/ERD.png)
+
 
 ### 2. 🤔**기능 정의서**
 
@@ -88,23 +102,11 @@
 └── 📁 utils
 ```
 ### ⚙️ Back-End
+#### 리펙토링 전
 ```
 📁 src
 ├── 📁 config
-│   ├── 📃 SecurityConfig.java
-│   └── 📃 SwaggerConfig.java
 ├── 📁 controller
-│   ├── 📃 AdminController.java
-│   ├── 📃 BoardController.java
-│   ├── 📃 CommentController.java
-│   ├── 📃 CompanyController.java
-│   ├── 📃 DocumentController.java
-│   ├── 📃 IndustryController.java
-│   ├── 📃 LikeItController.java
-│   ├── 📃 MemberController.java
-│   ├── 📃 PasswordQuestionController.java
-│   ├── 📃 ReportController.java
-│   └── 📃 ViewershipController.java
 ├── 📁 domain
 │   ├── 📁 dto
 │   └── 📁 entity
@@ -116,13 +118,69 @@
 │   └── 📁 handler
 └── 📁 service
 ```
-
-## 🏭System Structure
-![img.png](readme/SystemStructure.png)
-
-
-## 🔐ERD Structure
-![img.png](readme/ERD.png)
+#### MSA 리펙토링 후
+```java
+🧩 donkey-community
+├─ 🐘 backend
+│  ├─ 🔑 config-server
+│  │  └─ 📁src.main.java.com.community.config
+│  ├─ 📄 document
+│  │  └─ 📁src.main.java.com.community.document
+│  │      ├─ 📁 admin
+│  │      │  ├─ 📁controller
+│  │      │  ├─ 📁domain
+│  │      │  │  └─ 📁 dto
+│  │      │  │  └─ 📁 entity
+│  │      │  ├─ 📁repository
+│  │      │  └─ 📁service
+│  │      ├─ 📁 document
+│  │      │  ├─ 📁controller
+│  │      │  ├─ 📁domain
+│  │      │  │  └─ 📁 dto
+│  │      │  │  └─ 📁 entity
+│  │      │  ├─ 📁repository
+│  │      │  └─ 📁service
+│  │      └─ 📃 DocumentApplication.java
+│  ├─ 🚀 donkey-service
+│  │  └─ 📁src.main.java.com.community
+│  │      ├─ 📁 config
+│  │      ├─ 📁 controller
+│  │      ├─ 📁 domain
+│  │      │  └─ 📁 dto
+│  │      │  └─ 📁 entity
+│  │      ├─ 📁 repository
+│  │      ├─ 📁 security
+│  │      │  └─ 📁 filter
+│  │      │  └─ 📁 handler
+│  │      └─ 📁 service
+│  │      └─ 📃 CommunityApplication.java
+│  ├─ 🌐 eureka-server
+│  │  └─ 📁src.main.java.com.community.eureka
+│  │      └─ 📃 EurekaServerApplication.java
+│  ├─ 🌉 gateway-server
+│  │  └─ 📁src.main.java.com.community.gateway
+│  │      ├─ 📁 filter
+│  │      ├─ 📁 global
+│  │      │  └─ 📁 config
+│  │      │  └─ 📁 dto
+│  │      │  └─ 📁 exception
+│  │      │  └─ 📁 util
+│  │      └─ 📃 GatewayServerApplication.java
+│  └─ 👥 member
+│     └─ 📁src.main.java.com.community.member
+│        ├─ 📁 controller
+│        ├─ 📁 domain
+│        │  └─ 📁 dto
+│        │  └─ 📁 entity
+│        ├─ 📁 repository
+│        ├─ 📁 security
+│        │  └─ 📁 filter
+│        │  └─ 📁 handler
+│        └─ 📁 service
+│        └─ 📃 MemberApplication.java
+└─ 🐳 docker
+   └─ 📃 docker-compose.yml
+```
 
 ## 🎈API 명세서
 
@@ -235,3 +293,6 @@ https://github.com/lth01/ormi-community/assets/139758405/b959897c-04e2-4969-bff0
 - 이태희
 - 김요한
 - 김경록
+
+## Refactoring Member
+- 김요한
