@@ -43,7 +43,7 @@ tasks.named('test') {
 
 docker {
     name "${imagePrefix}/${project.name}:${project.version}"
-    tags "${project.version}"
+    tags "latest"
     files tasks.bootJar.outputs.files
     dockerfile file('Dockerfile')
     buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])

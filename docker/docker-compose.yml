@@ -17,7 +17,7 @@ services:
         aliases:
           - "redisdocument"
   configserver:
-    image: donkey/config:0.0.1-SNAPSHOT
+    image: donkey/config:latest
     container_name: configServer
     ports:
       - "8071:8071"
@@ -26,7 +26,7 @@ services:
         aliases:
           - "configserver"
   eurekaserver:
-    image: donkey/eureka:0.0.1-SNAPSHOT
+    image: donkey/eureka:latest
     container_name: eurekaServer
     ports:
       - "8070:8070"
@@ -38,7 +38,7 @@ services:
         aliases:
           - "eurekaserver"
   gatewayserver:
-    image: donkey/gateway:0.0.1-SNAPSHOT
+    image: donkey/gateway:latest
     container_name: gateway
     ports:
       - "8072:8072"
@@ -59,7 +59,7 @@ services:
         aliases:
           - "gateway"
   memberservice:
-    image: donkey/member:0.0.1-SNAPSHOT
+    image: donkey/member:latest
     container_name: member-service
     environment:
       PROFILE: "dev"
@@ -74,7 +74,7 @@ services:
     networks:
       - backend
   documentservice:
-    image: donkey/document:0.0.1-SNAPSHOT
+    image: donkey/document:latest
     container_name: document-service
     environment:
       PROFILE: "dev"

@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Feat : 실제 서비스 연동 확인&#10;&#10;CORS 에러 발생 -&gt; viteConfig에서 우회하여 CORS 에러 해결">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다.">
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/document-dev.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme/refactoring_skill.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme/refactoring_structure.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/document/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/document/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/eureka-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/eureka-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/gateway-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/gateway-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/member/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +415,7 @@
       <workItem from="1723037498048" duration="7409000" />
       <workItem from="1723079140705" duration="38173000" />
       <workItem from="1723168501480" duration="9434000" />
-      <workItem from="1723191592996" duration="2313000" />
+      <workItem from="1723191592996" duration="4621000" />
     </task>
     <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
       <option name="closed" value="true" />
@@ -476,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723183037961</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다.">
+      <option name="closed" value="true" />
+      <created>1723198257999</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723198257999</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +514,8 @@
     <MESSAGE value="Feat : document 서비스 서버 추가, Dockerfile 및 compose 변경&#10;&#10;게시글, 댓글, admin 등 기타 기능을 관리하는 document 서버를 추가하였습니다.&#10;&#10;모든 서비스에서 빌드 시 Docker에 빌드 파일을 자동으로 올리도록 gradle과 dockerfile을 추가하였습니다. 이후 docker-compose.yml 파일을 사용하여 자동으로 container를 생성하도록 추가하였습니다." />
     <MESSAGE value="Feat : document 관련 서비스 수정 및 추가&#10;&#10;게시글, 댓글, admin 등 Service, Repository, Controller를 추가하였습니다.&#10;&#10;기존 프론트 서버의 API를 MSA 변경사항에 맞게 수정하였습니다." />
     <MESSAGE value="Feat : 실제 서비스 연동 확인&#10;&#10;CORS 에러 발생 -&gt; viteConfig에서 우회하여 CORS 에러 해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat : 실제 서비스 연동 확인&#10;&#10;CORS 에러 발생 -&gt; viteConfig에서 우회하여 CORS 에러 해결" />
+    <MESSAGE value="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다." />
+    <option name="LAST_COMMIT_MESSAGE" value="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
