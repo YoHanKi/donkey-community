@@ -43,11 +43,19 @@ tasks.named('test') {
 
 docker {
 	name "${imagePrefix}/${project.name}:${project.version}"
-	tags "${project.version}"
+	tags "latest"
 	files tasks.bootJar.outputs.files
 	dockerfile file('Dockerfile')
 	buildArgs(['JAR_FILE': tasks.bootJar.outputs.files.singleFile.name])
 	dependsOn tasks.bootJar
 	build
 	push true
+}
+
+tasks.register('buildAndPushDockerImage') {
+	dependsOn tasks.docker
+}
+
+tasks.build {
+	finalizedBy tasks.buildAndPushDockerImage
 }
