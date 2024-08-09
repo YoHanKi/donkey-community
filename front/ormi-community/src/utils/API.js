@@ -1,7 +1,7 @@
 import axios from 'axios';
 import mem from "mem";
 import { getAccessToken, getRefreshToken, removeAccessToken, removeRefreshToken, setAccessToken, setRefreshToken } from './Cookie';
-const URL = "http://13.209.187.24:8080";
+const URL = "/api";
 const ipCheckURL = "https://geolocation-db.com/json/";
 
 axios.interceptors.response.use(

@@ -18,7 +18,6 @@ import java.util.Optional;
 
 @RestController
 @Slf4j
-@RequestMapping("/document")
 @RequiredArgsConstructor
 public class DocumentController {
 

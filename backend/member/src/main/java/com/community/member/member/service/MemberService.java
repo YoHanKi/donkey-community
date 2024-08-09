@@ -168,6 +168,8 @@ public class MemberService {
 
     //산업 리스트 조회 및 추가
     private MemberDTO.MemberResponse addIndustryList(List<String> industriesId, Member member) {
+        if(industriesId.isEmpty()) return new MemberDTO.MemberResponse(member);
+
         List<MemberInterests> interestsList = new ArrayList<>();
         List<Industry> industryList = industryRepository.findAllById(industriesId);
         for(Industry industry : industryList) {

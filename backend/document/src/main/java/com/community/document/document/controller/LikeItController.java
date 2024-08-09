@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Slf4j
 @AllArgsConstructor
-@RequestMapping("/document")
 public class LikeItController {
 	private LikeItService likeItService;
 

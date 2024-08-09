@@ -54,7 +54,7 @@ public class SecurityConfig {
         http.authenticationManager(authenticationManager);
 
         // LoginFilter --> /generateToken(변경 -> /api/login)를 호출하면 Login Filter가 실행
-        APILoginFilter apiLoginFilter = new APILoginFilter("/member/api/login");
+        APILoginFilter apiLoginFilter = new APILoginFilter("/api/login");
         apiLoginFilter.setAuthenticationManager(authenticationManager);
 
         // 필터 적용 위치 조정
@@ -70,13 +70,14 @@ public class SecurityConfig {
         // failureHandler -> 로그인 실패 시 failureHandler로 이동
         apiLoginFilter.setAuthenticationFailureHandler(failureHandler);
         // refreshToken 호출
-        http.addFilterBefore(new RefreshTokenFilter("/member/refreshToken", jwtUtil, redisUtil, memberRepository), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new RefreshTokenFilter("/refreshToken", jwtUtil, redisUtil, memberRepository), UsernamePasswordAuthenticationFilter.class);
 
         /**
          * 시큐리티 설정
          */
 
         http
+            .cors(AbstractHttpConfigurer::disable)
             //CSRF 비활성화
             .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
@@ -89,7 +90,7 @@ public class SecurityConfig {
 //            .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
         //관리자 페이지와 게시글 작성에 필요한 인증 요구
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/member/admin/**", "/document/admin/**").hasAuthority("ADMIN")//admin 페이지는 ADMIN 권한만 접근가능
+                .requestMatchers("/admin/**", "/admin/**").hasAuthority("ADMIN")//admin 페이지는 ADMIN 권한만 접근가능
                 .requestMatchers("/document/manage").hasAnyAuthority("ADMIN", "USER")  //document 페이지는(글 작성 페이지?) 인증한 사람만(회원)
                 .requestMatchers("/report/**").hasAnyAuthority("ADMIN", "USER")
                 .requestMatchers(HttpMethod.GET,"/document/manage").authenticated()              //GET 예시
@@ -110,6 +111,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource configurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:5173");
         configuration.addAllowedOrigin("http://localhost:3000");
         configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE"));

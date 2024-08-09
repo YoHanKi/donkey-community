@@ -12,7 +12,6 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/member")
 public class PasswordQuestionController {
 	private final PasswordQuestionService passwordQuestionService;
 

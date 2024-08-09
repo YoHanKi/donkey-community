@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @AllArgsConstructor
-@RequestMapping("/member")
 public class IndustryController {
     private IndustryService industryService;
     @GetMapping("/industry")

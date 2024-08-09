@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping("/document")
 @RequiredArgsConstructor
 public class ReportController {
 

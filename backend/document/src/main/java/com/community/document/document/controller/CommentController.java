@@ -15,7 +15,6 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/document")
 public class CommentController {
 
     private final CommentService commentService;
