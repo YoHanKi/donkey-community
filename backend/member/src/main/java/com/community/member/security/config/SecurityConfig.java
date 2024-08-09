@@ -70,16 +70,16 @@ public class SecurityConfig {
         // failureHandler -> 로그인 실패 시 failureHandler로 이동
         apiLoginFilter.setAuthenticationFailureHandler(failureHandler);
         // refreshToken 호출
-        http.addFilterBefore(new RefreshTokenFilter("/refreshToken", jwtUtil), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new RefreshTokenFilter("/refreshToken", jwtUtil, redisUtil, memberRepository), UsernamePasswordAuthenticationFilter.class);
 
         /**
          * 시큐리티 설정
          */
-        //Swagger UI
-        http.authorizeHttpRequests(auth -> auth.requestMatchers("/v3/**","/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**").permitAll())
-        //CSRF 비활성화
-            .csrf(AbstractHttpConfigurer::disable)
 
+        http
+            .cors(AbstractHttpConfigurer::disable)
+            //CSRF 비활성화
+            .csrf(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
         //로그아웃 시 main 페이지 이동
             .logout(logout -> logout.logoutSuccessUrl("/")
@@ -90,14 +90,14 @@ public class SecurityConfig {
 //            .authorizeHttpRequests(auth -> auth.anyRequest().permitAll());
         //관리자 페이지와 게시글 작성에 필요한 인증 요구
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/admin/**").hasAuthority("ADMIN")                       //admin 페이지는 ADMIN 권한만 접근가능
+                .requestMatchers("/admin/**", "/admin/**").hasAuthority("ADMIN")//admin 페이지는 ADMIN 권한만 접근가능
                 .requestMatchers("/document/manage").hasAnyAuthority("ADMIN", "USER")  //document 페이지는(글 작성 페이지?) 인증한 사람만(회원)
                 .requestMatchers("/report/**").hasAnyAuthority("ADMIN", "USER")
                 .requestMatchers(HttpMethod.GET,"/document/manage").authenticated()              //GET 예시
                 .anyRequest().permitAll());                                                 //이외에 모든 접근은 ROLE_ANONYMOUS 도 가능
 
         // 익명 사용자에게 부여될 권한 // 익명 사용자의 principal 이름 정의 (기본값은 'anonymousUser')
-        http.anonymous( any -> any.authorities("ANONYMOUS").principal("ANONYMOUS_USER"));
+        http.anonymous( any -> any.authorities("ANONYMOUS").principal("ANONYMOUS"));
 
         //cors 설정
         http.cors(httpSecurityCorsConfigurer -> {
@@ -111,6 +111,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource configurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:5173");
         configuration.addAllowedOrigin("http://localhost:3000");
         configuration.setAllowedOriginPatterns(Arrays.asList("*"));
         configuration.setAllowedMethods(Arrays.asList("HEAD", "GET", "POST", "PUT", "DELETE"));
@@ -123,7 +124,6 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        log.info("--------------------------web configure----------------------------");
         return (web) -> web.ignoring().requestMatchers("/v3/**","/static/**","/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html")
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
@@ -132,6 +132,4 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
 }

@@ -1,6 +1,9 @@
 package com.community.member.security.filter;
 
 import com.community.member.global.util.JWTUtil;
+import com.community.member.global.util.RedisUtil;
+import com.community.member.member.domain.entity.Member;
+import com.community.member.member.repository.MemberRepository;
 import com.community.member.security.exception.RefreshTokenException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -24,6 +27,8 @@ import java.util.Map;
 public class RefreshTokenFilter extends OncePerRequestFilter {
     private final String refreshPath;
     private final JWTUtil jwtUtil;
+    private final RedisUtil redisUtil;
+    private final MemberRepository memberRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -58,6 +63,10 @@ public class RefreshTokenFilter extends OncePerRequestFilter {
             //Access 토큰은 항상 새로 생성
             String accessTokenValue = jwtUtil.generateToken(Map.of("email", email), 1);
             String refreshTokenValue = tokens.get("refreshToken").getAsString();
+
+            //레디스에 저장
+            Member member = memberRepository.findByEmail(email).orElse(new Member());
+            redisUtil.set(member.getEmail(), member.getMemberRole().getRoleName(), 60);
 
             sendTokens(accessTokenValue, refreshTokenValue, response);
 

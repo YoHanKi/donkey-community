@@ -1,6 +1,8 @@
 package com.community.member.global.util;
 
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.stereotype.Component;
@@ -12,7 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
 
     private final RedisTemplate<String, Object> redisTemplate;
-    private final RedisTemplate<String, Object> redisBlackListTemplate;
+    @Resource(name = "documentRedisTemplate")
+    private final RedisTemplate<String, Object> documentRedisTemplate;
 
     public void set(String key, Object o, int minutes) {
         redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(o.getClass()));
@@ -31,20 +34,20 @@ public class RedisUtil {
         return Boolean.TRUE.equals(redisTemplate.hasKey(key));
     }
 
-    public void setBlackList(String key, Object o, int minutes) {
-        redisBlackListTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(o.getClass()));
-        redisBlackListTemplate.opsForValue().set(key, o, minutes, TimeUnit.MINUTES);
+    public void setDocumentData(String key, Object value) {
+        documentRedisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(value.getClass()));
+        documentRedisTemplate.opsForValue().set(key, value);
     }
 
-    public Object getBlackList(String key) {
-        return redisBlackListTemplate.opsForValue().get(key);
+    public Object getDocumentData(String key) {
+        return documentRedisTemplate.opsForValue().get(key);
     }
 
-    public boolean deleteBlackList(String key) {
-        return Boolean.TRUE.equals(redisBlackListTemplate.delete(key));
+    public boolean deleteDocumentData(String key) {
+        return Boolean.TRUE.equals(documentRedisTemplate.delete(key));
     }
 
-    public boolean hasKeyBlackList(String key) {
-        return Boolean.TRUE.equals(redisBlackListTemplate.hasKey(key));
+    public boolean hasDocumentDataKey(String key) {
+        return Boolean.TRUE.equals(documentRedisTemplate.hasKey(key));
     }
 }

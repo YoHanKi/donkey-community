@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @Slf4j
+@RequestMapping("/member")
 public class MemberController {
 
     private MemberService memberService;
@@ -26,13 +27,13 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @PostMapping("/member/register") //회원가입
+    @PostMapping("/register") //회원가입
     public ResponseEntity<SuccessResult> signup(@RequestBody AddMemberRequest request) {
         memberService.save(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(new SuccessResult("성공", "회원 정보가 성공적으로 저장 되었습니다."));
     }
 
-    @PutMapping("/member/modifyInfo") //회원정보 수정 (프론트 연결 시 AuthenticationPrincipal 확인)
+    @PutMapping("/modifyInfo") //회원정보 수정 (프론트 연결 시 AuthenticationPrincipal 확인)
     public ResponseEntity<SuccessResult> modify(@RequestBody ModifyInfoRequest request) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
@@ -40,7 +41,7 @@ public class MemberController {
         return ResponseEntity.ok().body(new SuccessResult("성공", "회원 정보가 성공적으로 수정 되었습니다."));
     }
 
-    @PutMapping("/member/withdrawal")
+    @PutMapping("/withdrawal")
     public ResponseEntity<?> withdrawal(@RequestBody WithdrawalRequest request) throws IOException {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
@@ -52,7 +53,7 @@ public class MemberController {
     }
 
     //유저 정보 조회
-    @GetMapping("/member/userinfo")
+    @GetMapping("/userinfo")
     public ResponseEntity<UserInfoResponse> userInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = Optional.ofNullable(authentication.getName()).orElseThrow(() -> new RuntimeException("로그인 정보가 없습니다."));
@@ -60,20 +61,20 @@ public class MemberController {
     }
 
     //유저 정보 조회
-    @GetMapping("/member/userinfo/{email}")
+    @GetMapping("/userinfo/{email}")
     public ResponseEntity<UserInfoResponse> userInfo(@PathVariable("email") String email) {
         if (email == null) throw new IllegalArgumentException("잘못 입력 되었습니다.");
         return ResponseEntity.ok().body(memberService.userInfo(email));
     }
 
     //비밀번호 찾기 질문
-    @PostMapping("/member/findpassword")
+    @PostMapping("/findpassword")
     public ResponseEntity<FindPasswordResponse> findPassword(@RequestBody FindPasswordRequest request) {
         return ResponseEntity.ok().body(memberService.findPassword(request));
     }
 
     //비밀번호 변경
-    @PostMapping("/member/changepassword")
+    @PostMapping("/changepassword")
     public ResponseEntity<SuccessResult> changePassword(@RequestBody ChangePasswordRequest request) {
         memberService.changePassword(request);
         return ResponseEntity.ok().body(new SuccessResult("성공", "성공적으로 수정되었습니다."));

@@ -18,13 +18,11 @@ public class ViewershipService {
 	@Transactional
 	public void increaseViewershipCount(String docId){
 		 Viewership viewership = viewershipRepository.findById(docId).orElseThrow(() -> new IllegalArgumentException("잘못된 id를 입력하였습니다."));
-
 		 viewershipRepository.updateViewership(viewership.getViewCount() + 1L, docId);
 	}
 
 	public Long showViewershipCount(String docId) {
 		Viewership viewership = viewershipRepository.findById(docId).orElseThrow(() -> new IllegalArgumentException("잘못된 id를 입력하였습니다."));
-
 		return viewership.getViewCount();
 	}
 }

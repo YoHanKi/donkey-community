@@ -10,6 +10,7 @@ import com.google.gson.JsonParser;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.security.SignatureException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -18,14 +19,10 @@ import reactor.core.publisher.Mono;
 
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class TokenFilter implements GlobalFilter, Ordered {
     private final JWTUtil jwtUtil;
     private final RedisUtil redisUtil;
-
-    public TokenFilter(JWTUtil jwtUtil, RedisUtil redisUtil) {
-        this.jwtUtil = jwtUtil;
-        this.redisUtil = redisUtil;
-    }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -42,8 +39,8 @@ public class TokenFilter implements GlobalFilter, Ordered {
                 String role = (String) redisUtil.get(email);
 
                 ServerWebExchange mutatedExchange = exchange.mutate()
-                        .request(builder -> builder.header("x-Email", email)
-                                .header("x-Role", role))
+                        .request(builder -> builder.header("u-Email", email)
+                                .header("u-Role", role))
                         .build();
 
                 // 다음 필터로 전송

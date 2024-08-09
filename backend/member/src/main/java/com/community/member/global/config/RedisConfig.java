@@ -18,6 +18,12 @@ public class RedisConfig {
     @Value("${redis.port}")
     private int port;
 
+    @Value("${redis.document.host}")
+    private String documentHost;
+    @Value("${redis.document.port}")
+    private int documentPort;
+
+    //게이트웨이에서 사용할 레디스
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration redisConfiguration = new RedisStandaloneConfiguration();
@@ -33,6 +39,23 @@ public class RedisConfig {
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
 
+        return redisTemplate;
+    }
+
+    //게시물 서버에서 사용할 레디스
+    @Bean
+    public RedisConnectionFactory documentRedisConnectionFactory() {
+        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
+        config.setHostName(documentHost);
+        config.setPort(documentPort);
+        return new LettuceConnectionFactory(config);
+    }
+    @Bean
+    public RedisTemplate<String, Object> documentRedisTemplate() {
+        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setConnectionFactory(documentRedisConnectionFactory());
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
         return redisTemplate;
     }
 }

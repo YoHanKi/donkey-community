@@ -26,6 +26,7 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2023.0.3")
+	set('imagePrefix', 'donkey')
 }
 
 dependencies {
@@ -70,7 +71,7 @@ tasks.named('test') {
 }
 
 docker {
-	name "${project.group}/${project.name}:${project.version}"
+	name "${imagePrefix}/${project.name}:${project.version}"
 	tags "${project.version}"
 	files tasks.bootJar.outputs.files
 	dockerfile file('Dockerfile')
@@ -78,4 +79,12 @@ docker {
 	dependsOn tasks.bootJar
 	build
 	push true
+}
+
+tasks.register('buildAndPushDockerImage') {
+	dependsOn tasks.docker
+}
+
+tasks.build {
+	finalizedBy tasks.buildAndPushDockerImage
 }
