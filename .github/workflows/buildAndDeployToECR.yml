@@ -49,5 +49,10 @@ jobs:
 
     - name: Tag and Push Docker Image to ECR
       run: |
-        docker tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{ env.imagePrefix }}/${{ matrix.service }}:latest
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{ env.imagePrefix }}/${{ matrix.service }}:latest
+        if [[ "${{ matrix.service }}" == *"-server" ]]; then
+          service_name=$(echo "${{ matrix.service }}" | sed 's/-server//')
+        else
+          service_name=${{ matrix.service }}
+        fi
+        docker tag ${image_id} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
