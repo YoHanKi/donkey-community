@@ -27,8 +27,8 @@ jobs:
       run: |
         services=("config" "eureka" "gateway" "member" "document")
         for service in "${services[@]}"; do
-          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/$service:latest ./$service
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/$service:latest
+          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/donkey/$service:latest ./$service
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/donkey/$service:latest
         done
 
     - name: Upload docker-compose.yml to S3
@@ -48,15 +48,13 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws s3 cp s3://my-bucket/docker-compose.yml ./docker-compose.yml
+        aws s3 cp s3://donkey-s3/docker-compose.yml ./docker-compose.yml
 
     - name: Run Docker Compose on EC2
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        CONFIG_SERVER_PRIVATE_KEY: ${{ secrets.CONFIG_SERVER_PRIVATE_KEY }}
       run: |
         ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_KEY_PAIR }} ec2-user@${{ secrets.EC2_PUBLIC_DNS }} << 'EOF'
-        echo "$CONFIG_SERVER_PRIVATE_KEY" > config-server-private-key.pem
         docker-compose -f /path/to/docker-compose.yml up -d
         EOF
