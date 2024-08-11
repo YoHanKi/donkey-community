@@ -6,7 +6,7 @@ on:
       - release
 
 env:
-  S3_BUCKET_NAME: donkey-content
+  S3_BUCKET_NAME: donkey-s3
   AWS_REGION: ap-northeast-2
   WORKING_DIRECTORY: ./front/donkey-community
 
