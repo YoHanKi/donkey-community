@@ -54,5 +54,5 @@ jobs:
         else
           service_name=${{ matrix.service }}
         fi
-        docker tag donkey/${{ matrix.service }}:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
+        docker tag donkey/${{ matrix.service }}:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
