@@ -54,5 +54,9 @@ jobs:
         else
           service_name=${{ matrix.service }}
         fi
-        docker tag donkey/$service_name:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
+
+        # 빌드된 이미지의 태그를 추출합니다 (예: 0.0.1-SNAPSHOT)
+        image_tag=$(docker images --format "{{.Tag}}" | grep 0.0.1-SNAPSHOT)
+        
+        docker tag donkey/$service_name:$image_tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
