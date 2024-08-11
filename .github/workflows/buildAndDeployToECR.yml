@@ -34,6 +34,29 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
+    - name: Determine service name
+      id: set_service_name
+      run: |
+        if [[ "${{ matrix.service }}" == *"-server" ]]; then
+          service_name=$(echo "${{ matrix.service }}" | sed 's/-server//')
+        else
+          service_name=${{ matrix.service }}
+        fi
+        echo "service_name=$service_name" >> $GITHUB_ENV
+
+    - name: Log in to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Create ECR repository if not exists
+      run: |
+        aws ecr describe-repositories --repository-names donkey/$service_name || \
+        aws ecr create-repository --repository-name donkey/$service_name
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        service_name: ${{ env.service_name }}
+
     - name: Build and Push Docker Image to ECR
       run: ./gradlew buildAndPushDockerImage
       working-directory: ./backend/${{ matrix.service }}
@@ -44,19 +67,17 @@ jobs:
         imagePrefix: donkey
         project_name: ${{ matrix.service }}
 
-    - name: Log in to Amazon ECR
-      uses: aws-actions/amazon-ecr-login@v1
 
     - name: Tag and Push Docker Image to ECR
       run: |
-        if [[ "${{ matrix.service }}" == *"-server" ]]; then
-          service_name=$(echo "${{ matrix.service }}" | sed 's/-server//')
-        else
-          service_name=${{ matrix.service }}
-        fi
-
         # 빌드된 이미지의 태그를 추출합니다 (예: 0.0.1-SNAPSHOT)
         image_tag=$(docker images --format "{{.Tag}}" | grep 0.0.1-SNAPSHOT)
         
         docker tag donkey/$service_name:$image_tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
+
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        service_name: ${{ env.service_name }}
