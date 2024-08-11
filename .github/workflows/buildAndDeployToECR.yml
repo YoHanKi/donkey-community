@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         service: [config-server, eureka-server, gateway-server, member, document]
-      max-parallel: 1
+      max-parallel: 3
 
     steps:
     - name: Checkout code
