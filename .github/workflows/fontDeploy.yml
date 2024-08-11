@@ -8,7 +8,7 @@ on:
 env:
   S3_BUCKET_NAME: donkey-s3
   AWS_REGION: ap-northeast-2
-  WORKING_DIRECTORY: front/donkey-community
+  WORKING_DIRECTORY: ./front/ormi-community
 
 jobs:
   deploy:
