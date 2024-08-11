@@ -59,4 +59,4 @@ jobs:
         image_tag=$(docker images --format "{{.Tag}}" | grep 0.0.1-SNAPSHOT)
         
         docker tag donkey/$service_name:$image_tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
