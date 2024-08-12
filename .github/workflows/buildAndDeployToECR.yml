@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         service: [config-server, eureka-server, gateway-server, member, document]
-      max-parallel: 1
+      max-parallel: 3
 
     steps:
     - name: Checkout code
@@ -34,6 +34,29 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
+    - name: Determine service name
+      id: set_service_name
+      run: |
+        if [[ "${{ matrix.service }}" == *"-server" ]]; then
+          service_name=$(echo "${{ matrix.service }}" | sed 's/-server//')
+        else
+          service_name=${{ matrix.service }}
+        fi
+        echo "service_name=$service_name" >> $GITHUB_ENV
+
+    - name: Log in to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Create ECR repository if not exists
+      run: |
+        aws ecr describe-repositories --repository-names donkey/$service_name || \
+        aws ecr create-repository --repository-name donkey/$service_name
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        service_name: ${{ env.service_name }}
+
     - name: Build and Push Docker Image to ECR
       run: ./gradlew buildAndPushDockerImage
       working-directory: ./backend/${{ matrix.service }}
@@ -44,15 +67,48 @@ jobs:
         imagePrefix: donkey
         project_name: ${{ matrix.service }}
 
-    - name: Log in to Amazon ECR
-      uses: aws-actions/amazon-ecr-login@v1
 
     - name: Tag and Push Docker Image to ECR
       run: |
-        if [[ "${{ matrix.service }}" == *"-server" ]]; then
-          service_name=$(echo "${{ matrix.service }}" | sed 's/-server//')
-        else
-          service_name=${{ matrix.service }}
-        fi
-        docker tag ${image_id} ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}/$service_name:latest
+        # 빌드된 이미지의 태그를 추출합니다 (예: 0.0.1-SNAPSHOT)
+        image_tag=$(docker images --format "{{.Tag}}" | grep 0.0.1-SNAPSHOT)
+        
+        docker tag donkey/$service_name:$image_tag ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/donkey/${{env.imagePrefix}}$service_name:latest
+
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        service_name: ${{ env.service_name }}
+
+
+    - name: Upload docker-compose.yml to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        aws s3 cp ./docker/docker-compose.yml s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Run deployment script
+      run: |
+        ./scripts/deploy.sh
+      env:
+        ECR_REPOSITORY_URL: ${{ secrets.ECR_REPOSITORY_URL }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+
+    
