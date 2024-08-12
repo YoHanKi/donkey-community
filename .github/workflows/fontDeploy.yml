@@ -6,7 +6,7 @@ on:
       - release
 
 env:
-  S3_BUCKET_NAME: ${{ AWS_S3_BUCKET }}
+  S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
   AWS_REGION: ap-northeast-2
   WORKING_DIRECTORY: ./front/ormi-community
 
