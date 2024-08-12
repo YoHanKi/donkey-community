@@ -10,9 +10,11 @@ unzip -o $GITHUB_SHA.zip
 # 도커 컴포즈 파일이 있는 디렉토리로 이동
 cd /home/ec2-user/deployment/docker
 
+export ECR_REPOSITORY_URL=$ECR_REPOSITORY_URL
+
 # 현재 실행 중인 컨테이너를 중지 및 제거
-ECR_REPOSITORY_URL=$ECR_REPOSITORY_URL docker compose down
+docker compose down
 
 # ECR에서 최신 이미지를 가져와 컨테이너를 실행
-ECR_REPOSITORY_URL=$ECR_REPOSITORY_URL docker compose pull
-ECR_REPOSITORY_URL=$ECR_REPOSITORY_URL docker-compose up -d
+docker compose pull
+docker-compose up -d
