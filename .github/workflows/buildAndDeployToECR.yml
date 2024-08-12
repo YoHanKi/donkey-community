@@ -82,15 +82,8 @@ jobs:
         AWS_REGION: ${{ secrets.AWS_REGION }}
         service_name: ${{ env.service_name }}
 
-
-    - name: Upload docker-compose.yml to S3
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: |
-        aws s3 cp ./docker/docker-compose.yml s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml
-
   deploy:
+    needs: build-and-deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -104,11 +97,15 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
-    - name: Run deployment script
-      run: |
-        ./scripts/deploy.sh
+    - name: Make zip file
+      run: zip -r ./$GITHUB_SHA.zip .
+
+    - name: Upload to S3
+      run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://${{ secrets.AWS_S3_BUCKET }}/$GITHUB_SHA.zip
+
+    - name: Code Deploy
+      run: aws deploy create-deployment --application-name ${{ secrets.CODEDEPLOY_NAME }} --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name ${{ secrets.CODEDEPLOY_GROUP }} --s3-location bucket=${{ secrets.AWS_S3_BUCKET }},bundleType=zip,key=$GITHUB_SHA.zip
       env:
         ECR_REPOSITORY_URL: ${{ secrets.ECR_REPOSITORY_URL }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
-
-    
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
