@@ -91,6 +91,7 @@ jobs:
         aws s3 cp ./docker/docker-compose.yml s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml
 
   deploy:
+    needs: build-and-deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -104,6 +105,9 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
 
+    - name: Grant execute permission for deploy.sh
+      run: chmod +x ./scripts/deploy.sh
+    
     - name: Run deployment script
       run: |
         ./scripts/deploy.sh
