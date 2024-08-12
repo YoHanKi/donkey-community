@@ -114,8 +114,8 @@ jobs:
     - name: Grant execute permission for deploy.sh
       run: chmod +x ./scripts/deploy.sh
 
-    - name: Run deployment script
-      run: ./scripts/deploy.sh
+    - name: Code Deploy
+      run: aws deploy create-deployment --application-name ${{ secrets.CODEDEPLOY_NAME }} --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name ${{ secrets.CODEDEPLOY_GROUP }}
       env:
         ECR_REPOSITORY_URL: ${{ secrets.ECR_REPOSITORY_URL }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
