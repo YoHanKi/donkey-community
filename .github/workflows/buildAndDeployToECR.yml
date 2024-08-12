@@ -114,8 +114,9 @@ jobs:
     - name: Grant execute permission for deploy.sh
       run: chmod +x ./scripts/deploy.sh
         
-    - name: Download docker-compose.yml from S3
-      run: aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml /home/ec2-user/docker-compose.yml
+    - name: Download docker-compose.yml on EC2
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ec2_key.pem ec2-user@${{ secrets.EC2_PUBLIC_DNS }} "aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml /home/ec2-user/action/docker-compose.yml"
       
     - name: Run deployment script
       run: ./scripts/deploy.sh
