@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다.">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Doc : 일부 도커 파일 수정&#10;&#10;build 파일과 도커 실행에 문제가 없도록 수정하였습니다.">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/document.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/member.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appspec.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/document-dev.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/eureka-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/gateway-server.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/config-server/src/main/resources/config/member-dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/document/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/document/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/eureka-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/eureka-server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +125,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/08_07_msa_member" />
+        <entry key="$PROJECT_DIR$" value="feature/08_08_msa_document" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,62 +145,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build config-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build document.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build eureka-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build gateway-server.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build member.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.config-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.config-server [docker].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.donkey-community [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.donkey-service [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.eureka [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.eureka-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.gateway-server [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.member [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.member [docker].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DocumentApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayServerApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.MemberApplication.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/ESTsoft boot/donkey-community&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31839082&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build config-server.executor": "Run",
+    "Gradle.Build document.executor": "Run",
+    "Gradle.Build eureka-server.executor": "Run",
+    "Gradle.Build gateway-server.executor": "Run",
+    "Gradle.Build member.executor": "Run",
+    "Gradle.config-server [build].executor": "Run",
+    "Gradle.config-server [docker].executor": "Run",
+    "Gradle.donkey-community [clean].executor": "Run",
+    "Gradle.donkey-service [build].executor": "Run",
+    "Gradle.eureka [build].executor": "Run",
+    "Gradle.eureka-server [build].executor": "Run",
+    "Gradle.gateway-server [build].executor": "Run",
+    "Gradle.member [build].executor": "Run",
+    "Gradle.member [docker].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.DocumentApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.GatewayServerApplication.executor": "Debug",
+    "Spring Boot.MemberApplication.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/ESTsoft boot/donkey-community",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31839082",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ESTsoft boot\donkey-community" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\document\src\main\java\com\community\document\document\repository" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\gateway-server" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\eureka-server" />
       <recent name="C:\ESTsoft boot\donkey-community\backend\config-server" />
-      <recent name="C:\ESTsoft boot\donkey-community\backend\document\src\main\java\com\community\document" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\ESTsoft boot\donkey-community\readme" />
@@ -378,14 +376,14 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.config-server [docker]" />
+      <item itemvalue="Gradle.gateway-server [build]" />
       <item itemvalue="Gradle.member [build]" />
       <item itemvalue="Gradle.member [docker]" />
-      <item itemvalue="Gradle.gateway-server [build]" />
-      <item itemvalue="Spring Boot.DocumentApplication" />
       <item itemvalue="Spring Boot.CommunityApplication" />
-      <item itemvalue="Spring Boot.MemberApplication" />
-      <item itemvalue="Spring Boot.GatewayServerApplication" />
+      <item itemvalue="Spring Boot.DocumentApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.GatewayServerApplication" />
+      <item itemvalue="Spring Boot.MemberApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
     </list>
     <recent_temporary>
@@ -415,7 +413,10 @@
       <workItem from="1723037498048" duration="7409000" />
       <workItem from="1723079140705" duration="38173000" />
       <workItem from="1723168501480" duration="9434000" />
-      <workItem from="1723191592996" duration="4621000" />
+      <workItem from="1723191592996" duration="5014000" />
+      <workItem from="1723363124125" duration="3699000" />
+      <workItem from="1723386045579" duration="2000" />
+      <workItem from="1723437727047" duration="1469000" />
     </task>
     <task id="LOCAL-00001" summary="Feat : 디렉토리 구조 변경 및 Config 서버 추가&#10;&#10;MSA 환경 구성을 위한 디렉토리 구조 변경&#10;Config 서버 추가">
       <option name="closed" value="true" />
@@ -489,7 +490,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723198257999</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Doc : 일부 도커 파일 수정&#10;&#10;build 파일과 도커 실행에 문제가 없도록 수정하였습니다.">
+      <option name="closed" value="true" />
+      <created>1723200022805</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723200022805</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +524,8 @@
     <MESSAGE value="Feat : document 관련 서비스 수정 및 추가&#10;&#10;게시글, 댓글, admin 등 Service, Repository, Controller를 추가하였습니다.&#10;&#10;기존 프론트 서버의 API를 MSA 변경사항에 맞게 수정하였습니다." />
     <MESSAGE value="Feat : 실제 서비스 연동 확인&#10;&#10;CORS 에러 발생 -&gt; viteConfig에서 우회하여 CORS 에러 해결" />
     <MESSAGE value="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다." />
+    <MESSAGE value="Doc : 일부 도커 파일 수정&#10;&#10;build 파일과 도커 실행에 문제가 없도록 수정하였습니다." />
+    <option name="LAST_COMMIT_MESSAGE" value="Doc : 일부 도커 파일 수정&#10;&#10;build 파일과 도커 실행에 문제가 없도록 수정하였습니다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
