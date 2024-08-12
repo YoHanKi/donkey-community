@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # AWS ECR에 로그인
-$(aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPOSITORY_URL)
+docker login -u AWS -p $(aws ecr get-login-password --region $AWS_REGION) $ECR_REPOSITORY_URL
 
 # 도커 컴포즈 파일이 위치한 디렉토리로 이동
 cd /home/ec2-user/action
