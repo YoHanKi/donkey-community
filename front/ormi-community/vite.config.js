@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8072', // 백엔드 서버 주소
+        target: 'http://donkeycommunity.xyz:8072', // 백엔드 서버 주소
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
