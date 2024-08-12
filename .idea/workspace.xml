@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Doc : 도커 컴포즈 파일 및 CodeDeploy 파일 추가&#10;&#10;ECR에서 이미지를 가져올 수 있도록 수정하였습니다.&#10;CD 환경에서 CodeDeploy를 사용하도록 설정 파일을 추가했습니다.&#10;실행에 문제가 없도록 수정하였습니다.">
+    <list default="true" id="6c3f05d1-2203-42f8-a86b-745f2572a29f" name="Changes" comment="Doc : 도메인을 추가 및 프론트 연결&#10;&#10;도메인을 추가 및 프론트 연결하였습니다.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/document/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/document/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/gateway-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/gateway-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/member/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -461,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723200022805</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Doc : 도메인을 추가 및 프론트 연결&#10;&#10;도메인을 추가 및 프론트 연결하였습니다.">
+      <option name="closed" value="true" />
+      <created>1723457188228</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723457188228</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +493,8 @@
     <MESSAGE value="Doc : Readme 수정&#10;&#10;MSA 아키텍처에 맞게 Readme를 수정하였습니다." />
     <MESSAGE value="Doc : 일부 도커 파일 수정&#10;&#10;build 파일과 도커 실행에 문제가 없도록 수정하였습니다." />
     <MESSAGE value="Doc : 도커 컴포즈 파일 및 CodeDeploy 파일 추가&#10;&#10;ECR에서 이미지를 가져올 수 있도록 수정하였습니다.&#10;CD 환경에서 CodeDeploy를 사용하도록 설정 파일을 추가했습니다.&#10;실행에 문제가 없도록 수정하였습니다." />
-    <option name="LAST_COMMIT_MESSAGE" value="Doc : 도커 컴포즈 파일 및 CodeDeploy 파일 추가&#10;&#10;ECR에서 이미지를 가져올 수 있도록 수정하였습니다.&#10;CD 환경에서 CodeDeploy를 사용하도록 설정 파일을 추가했습니다.&#10;실행에 문제가 없도록 수정하였습니다." />
+    <MESSAGE value="Doc : 도메인을 추가 및 프론트 연결&#10;&#10;도메인을 추가 및 프론트 연결하였습니다." />
+    <option name="LAST_COMMIT_MESSAGE" value="Doc : 도메인을 추가 및 프론트 연결&#10;&#10;도메인을 추가 및 프론트 연결하였습니다." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
