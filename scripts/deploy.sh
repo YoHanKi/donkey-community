@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# AWS S3에서 docker-compose.yml 파일 가져오기
+aws s3 cp s3://${AWS_S3_BUCKET}/docker-compose.yml /home/ec2-user/docker-compose.yml
+
 # AWS ECR에 로그인
 docker login -u AWS -p $(aws ecr get-login-password --region $AWS_REGION) $ECR_REPOSITORY_URL
 
