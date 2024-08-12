@@ -115,12 +115,8 @@ jobs:
       run: chmod +x ./scripts/deploy.sh
 
     - name: Download docker-compose.yml from S3
-      run: aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml ./docker-compose.yml
-
-    - name: Upload docker-compose.yml to EC2
-      run: |
-        scp -o StrictHostKeyChecking=no -i ec2_key.pem ./docker-compose.yml ec2-user@${{ secrets.EC2_PUBLIC_DNS }}:/home/ec2-user/action/docker-compose.yml
- 
+      run: aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml /home/ec2-user/docker-compose.yml
+      
     - name: Run deployment script
       run: ./scripts/deploy.sh
       env:
