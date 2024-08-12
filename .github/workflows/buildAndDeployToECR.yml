@@ -88,7 +88,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws s3 cp ./docker/docker-compose.yml s3://donkey-s3/docker-compose.yml
+        aws s3 cp ./docker/docker-compose.yml s3://${{ AWS_S3_BUCKET }}/docker-compose.yml
 
   deploy:
     needs: build-and-deploy
@@ -100,7 +100,7 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws s3 cp s3://donkey-s3/docker-compose.yml ./docker-compose.yml
+        aws s3 cp s3://${{ AWS_S3_BUCKET }}/docker-compose.yml ./docker-compose.yml --debug
 
     - name: Run Docker Compose on EC2
       env:
