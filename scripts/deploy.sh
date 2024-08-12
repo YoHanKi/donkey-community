@@ -15,4 +15,4 @@ docker compose down
 
 # ECR에서 최신 이미지를 가져와 컨테이너를 실행
 docker compose pull
-docker compose up -d
+ECR_REPOSITORY_URL=$ECR_REPOSITORY_URL docker-compose up -d
