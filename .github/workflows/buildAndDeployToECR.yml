@@ -113,9 +113,6 @@ jobs:
 
     - name: Grant execute permission for deploy.sh
       run: chmod +x ./scripts/deploy.sh
-
-    - name: Grant execute permission for /home/ec2-user
-      run: chmod +rwx /home/ec2-user
         
     - name: Download docker-compose.yml from S3
       run: aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml /home/ec2-user/docker-compose.yml
