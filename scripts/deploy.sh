@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# AWS S3에서 docker-compose.yml 파일 가져오기
-aws s3 cp --region ap-northeast-2 s3://${AWS_S3_BUCKET}/docker-compose.yml /home/ec2-user/docker-compose.yml
-
 # AWS ECR에 로그인
 docker login -u AWS -p $(aws ecr get-login-password --region $AWS_REGION) $ECR_REPOSITORY_URL
 
-# 도커 컴포즈 파일이 위치한 디렉토리로 이동
-cd /home/ec2-user/
+# 압축 해제
+cd /home/ec2-user/deployment
+unzip -o $GITHUB_SHA.zip
+
+# 도커 컴포즈 파일이 있는 디렉토리로 이동
+cd /home/ec2-user/deployment/docker
 
 # 현재 실행 중인 컨테이너를 중지 및 제거
 docker-compose down
