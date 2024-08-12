@@ -108,11 +108,11 @@ jobs:
     - name: Grant execute permission for deploy.sh
       run: chmod +x ./scripts/deploy.sh
 
-    - name: Deploy with CodeDeploy
-      run: |
-        aws deploy create-deployment --application-name ${{ secrets.CODEDEPLOY_NAME }} \
-                                     --deployment-config-name CodeDeployDefault.AllAtOnce \
-                                     --deployment-group-name ${{ secrets.CODEDEPLOY_GROUP }} \
-                                     --s3-location bucket=${{ secrets.AWS_S3_BUCKET }},key=docker-compose.yml,bundleType=yml
+    - name: Download docker-compose.yml from S3
+      run: aws s3 cp s3://${{ secrets.AWS_S3_BUCKET }}/docker-compose.yml action/docker-compose.yml
 
-    
+    - name: Run deployment script
+      run: ./scripts/deploy.sh
+      env:
+        ECR_REPOSITORY_URL: ${{ secrets.ECR_REPOSITORY_URL }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
